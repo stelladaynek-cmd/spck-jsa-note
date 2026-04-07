@@ -1,0 +1,520 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            "on-error-container": "#ffdad6",
+                            "secondary-container": "#314863",
+                            "surface-container": "#1f1f1f",
+                            "on-secondary-fixed": "#011d35",
+                            "secondary-fixed-dim": "#b0c9e8",
+                            "surface-container-low": "#1b1b1b",
+                            "on-primary-fixed-variant": "#004f58",
+                            outline: "#849396",
+                            "surface-container-highest": "#353535",
+                            "outline-variant": "#3b494c",
+                            "on-tertiary-fixed-variant": "#004b70",
+                            "inverse-on-surface": "#303030",
+                            "on-secondary": "#19324b",
+                            "on-primary-fixed": "#001f24",
+                            "surface-tint": "#00daf3",
+                            "on-secondary-container": "#9fb7d6",
+                            "tertiary-container": "#a4d6ff",
+                            "surface-bright": "#393939",
+                            "error-container": "#93000a",
+                            "tertiary-fixed-dim": "#8dcdff",
+                            "surface-container-high": "#2a2a2a",
+                            "on-secondary-fixed-variant": "#314863",
+                            "surface-dim": "#131313",
+                            "on-primary": "#00363d",
+                            tertiary: "#deefff",
+                            "primary-fixed-dim": "#00daf3",
+                            background: "#131313",
+                            "on-background": "#e2e2e2",
+                            "surface-container-lowest": "#0e0e0e",
+                            error: "#ffb4ab",
+                            "on-primary-container": "#00626e",
+                            "on-tertiary-container": "#005e8b",
+                            primary: "#c3f5ff",
+                            "secondary-fixed": "#d1e4ff",
+                            secondary: "#b0c9e8",
+                            "inverse-primary": "#006875",
+                            "surface-variant": "#353535",
+                            "on-tertiary-fixed": "#001e30",
+                            "primary-container": "#00e5ff",
+                            surface: "#131313",
+                            "on-surface": "#e2e2e2",
+                            "inverse-surface": "#e2e2e2",
+                            "on-error": "#690005",
+                            "tertiary-fixed": "#cae6ff",
+                            "on-surface-variant": "#bac9cc",
+                            "on-tertiary": "#00344f",
+                            "primary-fixed": "#9cf0ff",
+                        },
+                        fontFamily: {
+                            headline: ["Space Grotesk"],
+                            body: ["Manrope"],
+                            label: ["Manrope"],
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.125rem",
+                            lg: "0.25rem",
+                            xl: "0.5rem",
+                            full: "0.75rem",
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings:
+                    "FILL" 0,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
+            }
+            .neon-trace-hover:hover {
+                box-shadow: inset 0 1px 0 0 rgba(0, 229, 255, 0.3);
+            }
+        </style>
+    </head>
+    <body
+        class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary"
+    >
+        <!-- TopNavBar Implementation from JSON -->
+        <nav
+            class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-cyan-500/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex justify-between items-center px-8 h-16"
+        >
+            <div
+                class="text-2xl font-bold tracking-tighter text-cyan-400 drop-shadow-[0_0_8px_rgba(0,229,255,0.5)] font-headline"
+            >
+                LUMINOUS NOIR
+            </div>
+            <div
+                class="hidden md:flex items-center gap-8 font-headline tracking-tight text-sm uppercase"
+            >
+                <a
+                    class="text-gray-400 hover:text-cyan-300 hover:drop-shadow-[0_0_5px_rgba(0,229,255,0.8)] duration-300 ease-in-out"
+                    href="#"
+                    >Shop</a
+                >
+                <a
+                    class="text-gray-400 hover:text-cyan-300 hover:drop-shadow-[0_0_5px_rgba(0,229,255,0.8)] duration-300 ease-in-out"
+                    href="#"
+                    >Wishlist</a
+                >
+                <a
+                    class="text-gray-400 hover:text-cyan-300 hover:drop-shadow-[0_0_5px_rgba(0,229,255,0.8)] duration-300 ease-in-out"
+                    href="#"
+                    >Orders</a
+                >
+            </div>
+            <div class="flex items-center gap-6">
+                <button
+                    class="text-gray-400 hover:text-cyan-300 transition-colors duration-300"
+                >
+                    <span
+                        class="material-symbols-outlined"
+                        data-icon="shopping_cart"
+                        >shopping_cart</span
+                    >
+                </button>
+                <button
+                    class="text-cyan-400 border-b-2 border-cyan-400 pb-1 transition-colors duration-300"
+                >
+                    <span
+                        class="material-symbols-outlined"
+                        data-icon="account_circle"
+                        >account_circle</span
+                    >
+                </button>
+            </div>
+        </nav>
+        <main class="pt-24 pb-12 px-6 lg:px-12 max-w-7xl mx-auto">
+            <!-- Profile Header -->
+            <header class="mb-12">
+                <h1
+                    class="text-5xl font-headline font-bold text-on-surface tracking-tighter mb-2 uppercase"
+                >
+                    Account Profile
+                </h1>
+                <p class="text-on-surface-variant font-light tracking-wide">
+                    Manage your digital identity and curated preferences.
+                </p>
+            </header>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Left Column: Personal Info & Payment -->
+                <div class="lg:col-span-4 space-y-8">
+                    <!-- Personal Info Card -->
+                    <section
+                        class="bg-surface-container rounded-xl p-8 shadow-2xl relative overflow-hidden group neon-trace-hover transition-all duration-300"
+                    >
+                        <div class="relative z-10">
+                            <h2
+                                class="text-xs font-headline font-bold uppercase tracking-[0.2em] text-primary mb-6 flex items-center gap-2"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-sm"
+                                    data-icon="person"
+                                    >person</span
+                                >
+                                Personal Information
+                            </h2>
+                            <div class="space-y-6">
+                                <div>
+                                    <label
+                                        class="block text-[10px] uppercase tracking-widest text-on-surface-variant mb-1"
+                                        >Full Identity</label
+                                    >
+                                    <p
+                                        class="text-lg font-medium text-on-surface"
+                                    >
+                                        Julian Vane
+                                    </p>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[10px] uppercase tracking-widest text-on-surface-variant mb-1"
+                                        >Electronic Mail</label
+                                    >
+                                    <p class="text-on-surface">
+                                        j.vane@luminousnoir.com
+                                    </p>
+                                </div>
+                                <button
+                                    class="mt-4 text-xs font-bold text-primary uppercase tracking-widest hover:text-primary-container transition-colors flex items-center gap-2"
+                                >
+                                    Edit Credentials
+                                    <span
+                                        class="material-symbols-outlined text-xs"
+                                        data-icon="edit"
+                                        >edit</span
+                                    >
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Payment Methods Card -->
+                    <section
+                        class="bg-surface-container rounded-xl p-8 shadow-2xl neon-trace-hover transition-all duration-300"
+                    >
+                        <h2
+                            class="text-xs font-headline font-bold uppercase tracking-[0.2em] text-primary mb-6 flex items-center gap-2"
+                        >
+                            <span
+                                class="material-symbols-outlined text-sm"
+                                data-icon="payments"
+                                >payments</span
+                            >
+                            Payment Systems
+                        </h2>
+                        <div class="space-y-4">
+                            <div
+                                class="bg-surface-container-high rounded-lg p-4 flex items-center justify-between border border-outline-variant/10"
+                            >
+                                <div class="flex items-center gap-4">
+                                    <span
+                                        class="material-symbols-outlined text-primary-fixed-dim"
+                                        data-icon="credit_card"
+                                        >credit_card</span
+                                    >
+                                    <div>
+                                        <p class="text-sm font-medium">
+                                            •••• 8829
+                                        </p>
+                                        <p
+                                            class="text-[10px] text-on-surface-variant uppercase"
+                                        >
+                                            Expires 12/26
+                                        </p>
+                                    </div>
+                                </div>
+                                <span
+                                    class="text-[10px] font-bold text-primary tracking-widest uppercase"
+                                    >Primary</span
+                                >
+                            </div>
+                            <button
+                                class="w-full py-3 rounded-lg border border-dashed border-outline-variant hover:border-primary/50 transition-colors flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-sm"
+                                    data-icon="add"
+                                    >add</span
+                                >
+                                Add Method
+                            </button>
+                        </div>
+                    </section>
+                </div>
+                <!-- Right Column: Shipping & History -->
+                <div class="lg:col-span-8 space-y-8">
+                    <!-- Shipping Addresses Bento Section -->
+                    <section>
+                        <h2
+                            class="text-xs font-headline font-bold uppercase tracking-[0.2em] text-primary mb-6 flex items-center gap-2"
+                        >
+                            <span
+                                class="material-symbols-outlined text-sm"
+                                data-icon="local_shipping"
+                                >local_shipping</span
+                            >
+                            Shipping Destinations
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div
+                                class="bg-surface-container p-6 rounded-xl border-l-2 border-primary group hover:bg-surface-container-high transition-all duration-300"
+                            >
+                                <div
+                                    class="flex justify-between items-start mb-4"
+                                >
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest bg-primary/10 text-primary px-2 py-1 rounded"
+                                        >Default</span
+                                    >
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-white"
+                                        data-icon="more_vert"
+                                        >more_vert</span
+                                    >
+                                </div>
+                                <p class="font-bold text-on-surface mb-1">
+                                    Studio Residence
+                                </p>
+                                <p
+                                    class="text-sm text-on-surface-variant leading-relaxed"
+                                >
+                                    742 Cyber Link, Apt 404<br />
+                                    Neo-Tokyo, District 9<br />
+                                    150-0001
+                                </p>
+                            </div>
+                            <div
+                                class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 hover:bg-surface-container-high transition-all duration-300 group"
+                            >
+                                <div
+                                    class="flex justify-between items-start mb-4"
+                                >
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant"
+                                        >Office</span
+                                    >
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-white"
+                                        data-icon="more_vert"
+                                        >more_vert</span
+                                    >
+                                </div>
+                                <p class="font-bold text-on-surface mb-1">
+                                    Innovation Lab
+                                </p>
+                                <p
+                                    class="text-sm text-on-surface-variant leading-relaxed"
+                                >
+                                    12 Tech Plaza, Level 88<br />
+                                    San Francisco, CA 94103<br />
+                                    United States
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Order History Summary -->
+                    <section
+                        class="bg-surface-container rounded-xl overflow-hidden shadow-2xl"
+                    >
+                        <div
+                            class="p-8 border-b border-outline-variant/10 flex justify-between items-center"
+                        >
+                            <h2
+                                class="text-xs font-headline font-bold uppercase tracking-[0.2em] text-primary flex items-center gap-2"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-sm"
+                                    data-icon="history"
+                                    >history</span
+                                >
+                                Acquisition History
+                            </h2>
+                            <a
+                                class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
+                                href="#"
+                                >View All Archive</a
+                            >
+                        </div>
+                        <div class="divide-y divide-outline-variant/10">
+                            <!-- Order Item 1 -->
+                            <div
+                                class="p-6 flex flex-col md:flex-row md:items-center gap-6 hover:bg-white/5 transition-colors group"
+                            >
+                                <div
+                                    class="w-20 h-20 rounded bg-surface-container-highest flex-shrink-0 overflow-hidden relative"
+                                >
+                                    <img
+                                        alt="Product"
+                                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                        data-alt="Close up of a futuristic high-end sneaker with cyan glowing accents against a dark matte background"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi5nh9HAtxFNhnXOfeZp7K72vSjXIVo70ROiew-U9ScTM7d6AwoxPeEoeuqIlvpyXAKWKhfUnKSMbIi9hJRrkgZkgYp51LFyxjCC91e268niyN9zcieFQ5LSR9fsWPm5gEQxyD2zsN6LKqQJhoJg_p2lH8yWUKm_ApvjhNlLod2RUSzKQXtdT4U6ry4MpvSUYsooS2FvQ5byLjHfM6kWd9fkKNvqB6whqeodxC4-OSjfmbbgbVNHpajxO5i6YHhlNu__ks_tY9jZs"
+                                    />
+                                </div>
+                                <div class="flex-grow">
+                                    <div
+                                        class="flex justify-between items-start mb-2"
+                                    >
+                                        <div>
+                                            <h3
+                                                class="font-bold text-on-surface"
+                                            >
+                                                NOIR-X PERFORMANCE RUNNER
+                                            </h3>
+                                            <p
+                                                class="text-[10px] text-on-surface-variant uppercase tracking-widest"
+                                            >
+                                                Order #LN-90821 • Oct 24, 2023
+                                            </p>
+                                        </div>
+                                        <p
+                                            class="font-headline font-bold text-primary"
+                                        >
+                                            $450.00
+                                        </p>
+                                    </div>
+                                    <div class="flex items-center gap-4 mt-4">
+                                        <span
+                                            class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 px-2 py-1 rounded"
+                                        >
+                                            <span
+                                                class="material-symbols-outlined text-[12px]"
+                                                data-icon="check_circle"
+                                                >check_circle</span
+                                            >
+                                            Delivered
+                                        </span>
+                                        <button
+                                            class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant hover:text-white flex items-center gap-1 transition-colors"
+                                        >
+                                            Track Shipment
+                                            <span
+                                                class="material-symbols-outlined text-[12px]"
+                                                data-icon="arrow_outward"
+                                                >arrow_outward</span
+                                            >
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Order Item 2 -->
+                            <div
+                                class="p-6 flex flex-col md:flex-row md:items-center gap-6 hover:bg-white/5 transition-colors group"
+                            >
+                                <div
+                                    class="w-20 h-20 rounded bg-surface-container-highest flex-shrink-0 overflow-hidden relative"
+                                >
+                                    <img
+                                        alt="Product"
+                                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                        data-alt="Minimalist luxury white smart watch on a dark stone surface with elegant moody studio lighting"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFLgCXStMeFmlYmV3coiOsaFq1yqHd9Uj9wCa9ApildMm8nKdASmSn8gFqYSOrjikAuUH4085XoPFRrGlVQPIs_NLMxMR_USGEFcylA3BTo4LlVwyvSclsFbULcH8yoA8-W4ijZOYr53TfkYuR46IzZgdQqI_FajlQZentFm_qHwtwO1aGHSfU0G1CYc9-0rTPQA2W6XCxBK_p3kD9fgnsRwwBIdtNVvHulxQjzcpFbhQPtMa9-ixsTnhvSgwqa1cu0ZtyGxboubc"
+                                    />
+                                </div>
+                                <div class="flex-grow">
+                                    <div
+                                        class="flex justify-between items-start mb-2"
+                                    >
+                                        <div>
+                                            <h3
+                                                class="font-bold text-on-surface"
+                                            >
+                                                TITAN CERAMIC CHRONOGRAPH
+                                            </h3>
+                                            <p
+                                                class="text-[10px] text-on-surface-variant uppercase tracking-widest"
+                                            >
+                                                Order #LN-88120 • Sep 12, 2023
+                                            </p>
+                                        </div>
+                                        <p
+                                            class="font-headline font-bold text-primary"
+                                        >
+                                            $1,200.00
+                                        </p>
+                                    </div>
+                                    <div class="flex items-center gap-4 mt-4">
+                                        <span
+                                            class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant bg-white/5 px-2 py-1 rounded"
+                                        >
+                                            <span
+                                                class="material-symbols-outlined text-[12px]"
+                                                data-icon="archive"
+                                                >archive</span
+                                            >
+                                            Archived
+                                        </span>
+                                        <button
+                                            class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant hover:text-white flex items-center gap-1 transition-colors"
+                                        >
+                                            Order Details
+                                            <span
+                                                class="material-symbols-outlined text-[12px]"
+                                                data-icon="visibility"
+                                                >visibility</span
+                                            >
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <!-- Contextual Support FAB - Supressed as per rules for Details/Settings screens -->
+        <!-- Navigation Shell Logic: Rendered TopNavBar because it's a top-level destination (Profile) -->
+        <footer
+            class="mt-12 border-t border-outline-variant/10 py-12 px-6 lg:px-12 text-center"
+        >
+            <div
+                class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
+            >
+                <div
+                    class="text-on-surface-variant text-[10px] uppercase tracking-[0.3em]"
+                >
+                    © 2024 Luminous Noir. All Rights Reserved.
+                </div>
+                <div
+                    class="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant"
+                >
+                    <a class="hover:text-primary transition-colors" href="#"
+                        >Privacy Protocol</a
+                    >
+                    <a class="hover:text-primary transition-colors" href="#"
+                        >Terms of Service</a
+                    >
+                    <a class="hover:text-primary transition-colors" href="#"
+                        >Digital Security</a
+                    >
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

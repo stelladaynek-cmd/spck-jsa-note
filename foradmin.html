@@ -1,0 +1,795 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>LUMINOUS NOIR | Admin Core</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            "on-error-container": "#ffdad6",
+                            "secondary-container": "#314863",
+                            "surface-container": "#1f1f1f",
+                            "on-secondary-fixed": "#011d35",
+                            "secondary-fixed-dim": "#b0c9e8",
+                            "surface-container-low": "#1b1b1b",
+                            "on-primary-fixed-variant": "#004f58",
+                            outline: "#849396",
+                            "surface-container-highest": "#353535",
+                            "outline-variant": "#3b494c",
+                            "on-tertiary-fixed-variant": "#004b70",
+                            "inverse-on-surface": "#303030",
+                            "on-secondary": "#19324b",
+                            "on-primary-fixed": "#001f24",
+                            "surface-tint": "#00daf3",
+                            "on-secondary-container": "#9fb7d6",
+                            "tertiary-container": "#a4d6ff",
+                            "surface-bright": "#393939",
+                            "error-container": "#93000a",
+                            "tertiary-fixed-dim": "#8dcdff",
+                            "surface-container-high": "#2a2a2a",
+                            "on-secondary-fixed-variant": "#314863",
+                            "surface-dim": "#131313",
+                            "on-primary": "#00363d",
+                            tertiary: "#deefff",
+                            "primary-fixed-dim": "#00daf3",
+                            background: "#131313",
+                            "on-background": "#e2e2e2",
+                            "surface-container-lowest": "#0e0e0e",
+                            error: "#ffb4ab",
+                            "on-primary-container": "#00626e",
+                            "on-tertiary-container": "#005e8b",
+                            primary: "#c3f5ff",
+                            "secondary-fixed": "#d1e4ff",
+                            secondary: "#b0c9e8",
+                            "inverse-primary": "#006875",
+                            "surface-variant": "#353535",
+                            "on-tertiary-fixed": "#001e30",
+                            "primary-container": "#00e5ff",
+                            surface: "#131313",
+                            "on-surface": "#e2e2e2",
+                            "inverse-surface": "#e2e2e2",
+                            "on-error": "#690005",
+                            "tertiary-fixed": "#cae6ff",
+                            "on-surface-variant": "#bac9cc",
+                            "on-tertiary": "#00344f",
+                            "primary-fixed": "#9cf0ff",
+                        },
+                        fontFamily: {
+                            headline: ["Space Grotesk"],
+                            body: ["Manrope"],
+                            label: ["Manrope"],
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.125rem",
+                            lg: "0.25rem",
+                            xl: "0.5rem",
+                            full: "0.75rem",
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings:
+                    "FILL" 0,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
+            }
+            .neon-glow:hover {
+                box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+            }
+            .glass-panel {
+                backdrop-filter: blur(20px);
+                background-color: rgba(31, 31, 31, 0.6);
+            }
+        </style>
+    </head>
+    <body
+        class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary"
+    >
+        <!-- SideNavBar Component -->
+        <aside
+            class="h-screen w-64 fixed left-0 top-0 bg-[#1b1b1b] bg-[#1f1f1f] border-r border-white/5 shadow-2xl shadow-cyan-900/5 flex flex-col py-8 z-40"
+        >
+            <div class="px-6 mb-8">
+                <h1 class="text-lg font-bold text-white font-headline">
+                    Admin Core
+                </h1>
+                <p
+                    class="text-xs text-on-surface-variant/60 font-label tracking-wider uppercase"
+                >
+                    System Control
+                </p>
+            </div>
+            <nav class="flex-1 space-y-1">
+                <!-- Active: Dashboard -->
+                <a
+                    class="flex items-center gap-3 bg-cyan-500/10 text-cyan-400 border-r-4 border-cyan-400 px-6 py-4 font-headline text-sm font-medium transition-all active:scale-95 duration-200"
+                    href="#"
+                >
+                    <span
+                        class="material-symbols-outlined"
+                        data-icon="dashboard"
+                        >dashboard</span
+                    >
+                    <span>Dashboard</span>
+                </a>
+                <a
+                    class="flex items-center gap-3 text-gray-500 px-6 py-4 font-headline text-sm font-medium hover:bg-white/5 hover:text-white transition-all active:scale-95 duration-200"
+                    href="#"
+                >
+                    <span
+                        class="material-symbols-outlined"
+                        data-icon="inventory_2"
+                        >inventory_2</span
+                    >
+                    <span>Inventory</span>
+                </a>
+                <a
+                    class="flex items-center gap-3 text-gray-500 px-6 py-4 font-headline text-sm font-medium hover:bg-white/5 hover:text-white transition-all active:scale-95 duration-200"
+                    href="#"
+                >
+                    <span
+                        class="material-symbols-outlined"
+                        data-icon="receipt_long"
+                        >receipt_long</span
+                    >
+                    <span>Orders</span>
+                </a>
+                <a
+                    class="flex items-center gap-3 text-gray-500 px-6 py-4 font-headline text-sm font-medium hover:bg-white/5 hover:text-white transition-all active:scale-95 duration-200"
+                    href="#"
+                >
+                    <span class="material-symbols-outlined" data-icon="group"
+                        >group</span
+                    >
+                    <span>Customers</span>
+                </a>
+                <a
+                    class="flex items-center gap-3 text-gray-500 px-6 py-4 font-headline text-sm font-medium hover:bg-white/5 hover:text-white transition-all active:scale-95 duration-200"
+                    href="#"
+                >
+                    <span class="material-symbols-outlined" data-icon="settings"
+                        >settings</span
+                    >
+                    <span>Settings</span>
+                </a>
+            </nav>
+            <div class="px-6 pt-4 border-t border-white/5">
+                <a
+                    class="flex items-center gap-3 text-gray-500 py-4 font-headline text-sm font-medium hover:text-white transition-all"
+                    href="#"
+                >
+                    <span class="material-symbols-outlined" data-icon="help"
+                        >help</span
+                    >
+                    <span>Help Center</span>
+                </a>
+                <button
+                    class="w-full mt-4 bg-primary-container text-on-primary font-label text-sm py-3 px-4 rounded-lg font-bold tracking-tight hover:shadow-[0_0_15px_rgba(0,229,255,0.4)] transition-all duration-300 uppercase"
+                >
+                    Generate Report
+                </button>
+            </div>
+        </aside>
+        <!-- Main Content Canvas -->
+        <main class="ml-64 p-8 min-h-screen">
+            <!-- Header / TopAppBar Mockup Logic -->
+            <header class="flex justify-between items-end mb-12">
+                <div>
+                    <h2
+                        class="text-4xl font-headline font-bold tracking-tighter text-white"
+                    >
+                        SYSTEM OVERVIEW
+                    </h2>
+                    <p class="text-on-surface-variant font-label text-sm mt-1">
+                        Real-time performance metrics and logistics.
+                    </p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <input
+                            class="bg-surface-container-low border-none text-on-surface text-sm rounded-lg px-4 py-2 w-64 focus:ring-1 focus:ring-primary-container transition-all"
+                            placeholder="Search data..."
+                            type="text"
+                        />
+                        <span
+                            class="material-symbols-outlined absolute right-3 top-2 text-on-surface-variant text-sm"
+                            data-icon="search"
+                            >search</span
+                        >
+                    </div>
+                    <div
+                        class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container/20"
+                    >
+                        <img
+                            alt="Admin User Profile"
+                            class="w-full h-full object-cover"
+                            data-alt="Close-up professional portrait of a tech executive with sharp lighting and dark studio background"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8rNis46ZjSBojNeWToj_JWrdT0ztOwf4RI-Mtiu_cFE54E7fTY-ThfL0A6VQef1MpY3lAEVWK1WCY4G_JJsrskKX26ykutet1M8EWLqvL64EjZANmvovsVlR6fLYm0iIix5fGOinzEKKXL7YOK7Iyf3ErpwVx4AWzMPGczdF4AbUJlF_ATzgEdEnh6n8ZJGxjZTg91Pbdk8Zt5Oa-E1pBEZ0_vROmFfIswdr_kbHKRMjwLX2EcdtkE5iCoBvoXwJyVm8OeOB-zGE"
+                        />
+                    </div>
+                </div>
+            </header>
+            <!-- KPI Cards Bento Grid -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div
+                    class="bg-surface-container p-6 rounded-xl border-t border-primary/10 shadow-lg group hover:bg-surface-container-high transition-all duration-300"
+                >
+                    <div class="flex justify-between items-start mb-4">
+                        <div
+                            class="p-2 bg-primary-container/10 rounded-lg text-primary-container"
+                        >
+                            <span
+                                class="material-symbols-outlined"
+                                data-icon="payments"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >payments</span
+                            >
+                        </div>
+                        <span class="text-primary text-xs font-label"
+                            >+12.5%</span
+                        >
+                    </div>
+                    <p
+                        class="text-on-surface-variant text-xs font-label uppercase tracking-widest"
+                    >
+                        Total Revenue
+                    </p>
+                    <h3
+                        class="text-3xl font-headline font-bold text-white mt-1"
+                    >
+                        $4,290,150
+                    </h3>
+                    <div
+                        class="w-full bg-surface-container-highest h-1 mt-4 rounded-full overflow-hidden"
+                    >
+                        <div
+                            class="bg-primary-container h-full w-[72%] shadow-[0_0_8px_rgba(0,229,255,0.5)]"
+                        ></div>
+                    </div>
+                </div>
+                <div
+                    class="bg-surface-container p-6 rounded-xl border-t border-primary/10 shadow-lg group hover:bg-surface-container-high transition-all duration-300"
+                >
+                    <div class="flex justify-between items-start mb-4">
+                        <div
+                            class="p-2 bg-primary-container/10 rounded-lg text-primary-container"
+                        >
+                            <span
+                                class="material-symbols-outlined"
+                                data-icon="shopping_bag"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >shopping_bag</span
+                            >
+                        </div>
+                        <span class="text-primary text-xs font-label"
+                            >+4.2%</span
+                        >
+                    </div>
+                    <p
+                        class="text-on-surface-variant text-xs font-label uppercase tracking-widest"
+                    >
+                        New Orders
+                    </p>
+                    <h3
+                        class="text-3xl font-headline font-bold text-white mt-1"
+                    >
+                        12,842
+                    </h3>
+                    <div
+                        class="w-full bg-surface-container-highest h-1 mt-4 rounded-full overflow-hidden"
+                    >
+                        <div
+                            class="bg-primary-container h-full w-[45%] shadow-[0_0_8px_rgba(0,229,255,0.5)]"
+                        ></div>
+                    </div>
+                </div>
+                <div
+                    class="bg-surface-container p-6 rounded-xl border-t border-primary/10 shadow-lg group hover:bg-surface-container-high transition-all duration-300"
+                >
+                    <div class="flex justify-between items-start mb-4">
+                        <div
+                            class="p-2 bg-primary-container/10 rounded-lg text-primary-container"
+                        >
+                            <span
+                                class="material-symbols-outlined"
+                                data-icon="trending_up"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >trending_up</span
+                            >
+                        </div>
+                        <span class="text-primary text-xs font-label"
+                            >+18.9%</span
+                        >
+                    </div>
+                    <p
+                        class="text-on-surface-variant text-xs font-label uppercase tracking-widest"
+                    >
+                        Total Sales
+                    </p>
+                    <h3
+                        class="text-3xl font-headline font-bold text-white mt-1"
+                    >
+                        84,200
+                    </h3>
+                    <div
+                        class="w-full bg-surface-container-highest h-1 mt-4 rounded-full overflow-hidden"
+                    >
+                        <div
+                            class="bg-primary-container h-full w-[89%] shadow-[0_0_8px_rgba(0,229,255,0.5)]"
+                        ></div>
+                    </div>
+                </div>
+            </section>
+            <!-- Revenue Chart Area -->
+            <section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                <div
+                    class="lg:col-span-2 bg-surface-container rounded-xl p-8 shadow-xl relative overflow-hidden"
+                >
+                    <div class="flex justify-between items-center mb-8">
+                        <h4 class="font-headline font-bold text-white text-lg">
+                            REVENUE ANALYTICS
+                        </h4>
+                        <div class="flex gap-2">
+                            <button
+                                class="text-[10px] px-3 py-1 rounded bg-surface-container-highest text-on-surface hover:text-primary-container transition-colors"
+                            >
+                                7D
+                            </button>
+                            <button
+                                class="text-[10px] px-3 py-1 rounded bg-primary-container text-on-primary font-bold"
+                            >
+                                1M
+                            </button>
+                            <button
+                                class="text-[10px] px-3 py-1 rounded bg-surface-container-highest text-on-surface hover:text-primary-container transition-colors"
+                            >
+                                1Y
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Mock Chart Visualization -->
+                    <div
+                        class="h-64 flex items-end justify-between gap-4 relative"
+                    >
+                        <!-- Grid Lines -->
+                        <div
+                            class="absolute inset-0 flex flex-col justify-between opacity-5"
+                        >
+                            <div class="border-t border-white w-full"></div>
+                            <div class="border-t border-white w-full"></div>
+                            <div class="border-t border-white w-full"></div>
+                            <div class="border-t border-white w-full"></div>
+                        </div>
+                        <!-- Bars with Cyan Glow -->
+                        <div
+                            class="flex-1 bg-gradient-to-t from-primary/10 to-primary-container/40 rounded-t h-[40%] group relative"
+                        >
+                            <div
+                                class="absolute -top-10 left-1/2 -translate-x-1/2 bg-surface-container-highest text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity"
+                            >
+                                $120k
+                            </div>
+                        </div>
+                        <div
+                            class="flex-1 bg-gradient-to-t from-primary/10 to-primary-container/40 rounded-t h-[65%] group relative"
+                        >
+                            <div
+                                class="absolute -top-10 left-1/2 -translate-x-1/2 bg-surface-container-highest text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity"
+                            >
+                                $195k
+                            </div>
+                        </div>
+                        <div
+                            class="flex-1 bg-gradient-to-t from-primary/10 to-primary-container/40 rounded-t h-[55%] group relative"
+                        ></div>
+                        <div
+                            class="flex-1 bg-gradient-to-t from-primary/10 to-primary-container/40 rounded-t h-[85%] group relative"
+                        >
+                            <div
+                                class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary text-[10px] px-2 py-1 rounded opacity-100"
+                            >
+                                $250k
+                            </div>
+                        </div>
+                        <div
+                            class="flex-1 bg-gradient-to-t from-primary/10 to-primary-container/40 rounded-t h-[70%] group relative"
+                        ></div>
+                        <div
+                            class="flex-1 bg-gradient-to-t from-primary/10 to-primary-container/40 rounded-t h-[95%] group relative shadow-[0_-10px_20px_rgba(0,229,255,0.2)]"
+                        ></div>
+                        <div
+                            class="flex-1 bg-gradient-to-t from-primary/10 to-primary-container/40 rounded-t h-[60%] group relative"
+                        ></div>
+                        <div
+                            class="flex-1 bg-gradient-to-t from-primary/10 to-primary-container/40 rounded-t h-[75%] group relative"
+                        ></div>
+                        <div
+                            class="flex-1 bg-gradient-to-t from-primary/10 to-primary-container/40 rounded-t h-[80%] group relative"
+                        ></div>
+                    </div>
+                    <div
+                        class="flex justify-between mt-4 text-[10px] text-on-surface-variant font-label"
+                    >
+                        <span>JAN</span><span>FEB</span><span>MAR</span
+                        ><span>APR</span><span>MAY</span><span>JUN</span
+                        ><span>JUL</span><span>AUG</span><span>SEP</span>
+                    </div>
+                </div>
+                <!-- Side Inventory Quick Look -->
+                <div
+                    class="bg-surface-container rounded-xl p-6 border-l-4 border-primary-container shadow-xl"
+                >
+                    <h4 class="font-headline font-bold text-white text-lg mb-6">
+                        QUICK LOGISTICS
+                    </h4>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center text-primary"
+                            >
+                                <span
+                                    class="material-symbols-outlined"
+                                    data-icon="local_shipping"
+                                    >local_shipping</span
+                                >
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-bold text-white">
+                                    Transit Hub A
+                                </p>
+                                <p class="text-xs text-on-surface-variant">
+                                    42 Active Shipments
+                                </p>
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-success-container text-cyan-400"
+                                data-icon="check_circle"
+                                >check_circle</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center text-primary"
+                            >
+                                <span
+                                    class="material-symbols-outlined"
+                                    data-icon="warehouse"
+                                    >warehouse</span
+                                >
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-bold text-white">
+                                    Main Warehouse
+                                </p>
+                                <p class="text-xs text-on-surface-variant">
+                                    Capacity: 89% full
+                                </p>
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-error"
+                                data-icon="warning"
+                                >warning</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center text-primary"
+                            >
+                                <span
+                                    class="material-symbols-outlined"
+                                    data-icon="inventory"
+                                    >inventory</span
+                                >
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-bold text-white">
+                                    Pending Stock
+                                </p>
+                                <p class="text-xs text-on-surface-variant">
+                                    3 Requests awaiting
+                                </p>
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-on-surface-variant"
+                                data-icon="schedule"
+                                >schedule</span
+                            >
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-8 py-3 text-xs font-bold tracking-widest text-primary border border-primary/20 rounded hover:bg-primary/5 transition-all"
+                    >
+                        VIEW FULL LOGISTICS
+                    </button>
+                </div>
+            </section>
+            <!-- Inventory Table Section -->
+            <section
+                class="bg-surface-container rounded-xl overflow-hidden shadow-2xl"
+            >
+                <div
+                    class="px-8 py-6 flex justify-between items-center border-b border-white/5 bg-surface-container-low"
+                >
+                    <h4 class="font-headline font-bold text-white text-lg">
+                        INVENTORY STATUS
+                    </h4>
+                    <div class="flex gap-4">
+                        <select
+                            class="bg-surface-container-highest border-none text-on-surface-variant text-xs rounded px-3 py-2 outline-none cursor-pointer"
+                        >
+                            <option>All Categories</option>
+                            <option>Electronics</option>
+                            <option>Automotive</option>
+                        </select>
+                        <button
+                            class="bg-primary-container text-on-primary text-xs font-bold px-4 py-2 rounded flex items-center gap-2 hover:scale-[1.02] transition-transform"
+                        >
+                            <span
+                                class="material-symbols-outlined text-sm"
+                                data-icon="add"
+                                >add</span
+                            >
+                            ADD ITEM
+                        </button>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead
+                            class="bg-surface-container-low/50 text-on-surface-variant text-[10px] uppercase tracking-[0.2em] font-label"
+                        >
+                            <tr>
+                                <th class="px-8 py-4">Item Details</th>
+                                <th class="px-8 py-4">SKU</th>
+                                <th class="px-8 py-4">Category</th>
+                                <th class="px-8 py-4">Stock Level</th>
+                                <th class="px-8 py-4">Status</th>
+                                <th class="px-8 py-4">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5 text-sm">
+                            <!-- Table Row 1 -->
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="px-8 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 bg-surface-container-highest rounded-lg overflow-hidden border border-white/5"
+                                        >
+                                            <img
+                                                alt="Product Image"
+                                                class="w-full h-full object-cover"
+                                                data-alt="Modern sleek red sneaker on dark reflective surface with cinematic neon lighting"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk0bAb_XCSkM9EpkJTaygV6XTOCJx7x3Gfk4paweW9zJ14WUQN4S-TGj0EKub38Te0FWJm9VooSpK4oKkkrNEQbwzZRfyO_DSc9JdVL-_Z1N5l9chT-pAhFhwwsiasM8kwsBjtafrC-MEQ1BD_7ZkDumxPknCEYIW8_KrP_52FJcNjKFcbwAjfg3suUeOZLY8L-xTlMjwNTKbXIVSjYC0su-_pyKiW0e4dsXPTF2po7Og0eJVisVJSw4BGttxin6P7Rg7oSkhGQ8Y"
+                                            />
+                                        </div>
+                                        <span class="font-bold text-on-surface"
+                                            >LUMINOUS V1 Sneaker</span
+                                        >
+                                    </div>
+                                </td>
+                                <td
+                                    class="px-8 py-4 text-on-surface-variant font-mono text-xs"
+                                >
+                                    SKU-29381-RED
+                                </td>
+                                <td class="px-8 py-4 text-on-surface-variant">
+                                    Apparel
+                                </td>
+                                <td class="px-8 py-4">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-white font-bold"
+                                            >142</span
+                                        >
+                                        <div
+                                            class="w-16 bg-surface-container-highest h-1 rounded-full"
+                                        >
+                                            <div
+                                                class="bg-primary-container h-full w-[80%] shadow-[0_0_5px_rgba(0,229,255,0.3)]"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-4">
+                                    <span
+                                        class="bg-cyan-500/10 text-cyan-400 text-[10px] font-bold px-2 py-1 rounded"
+                                        >IN STOCK</span
+                                    >
+                                </td>
+                                <td class="px-8 py-4">
+                                    <button
+                                        class="text-on-surface-variant hover:text-white transition-colors"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-lg"
+                                            data-icon="more_vert"
+                                            >more_vert</span
+                                        >
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Table Row 2 -->
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="px-8 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 bg-surface-container-highest rounded-lg overflow-hidden border border-white/5"
+                                        >
+                                            <img
+                                                alt="Product Image"
+                                                class="w-full h-full object-cover"
+                                                data-alt="Minimalist luxury white watch on black silk background with sharp contrast lighting"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKqGGJlpeM-QE7_PTMv3hEHU_hdL9O1lU-f4Qs2rheJLG8fUL6G8bhtknn8cu_MVEXc0GRtjOgzfyRH30h_wmuqAjipBh0vELIhYo3EMbrwvXAp8dIOsqRdQPqxrmPc44IW3eBTfVg9xqeM0jQuHbUbI_AoNotFMrng82VeTqczeaFhfvtl-3Y1fiN5vfCotywmTjKJ7DP_JzeQYdBSnDs_XnG8GkjddOvCtxLXBrISKMgKHboz9fFnVqxvtdFY_mHNkbJh6XuMWo"
+                                            />
+                                        </div>
+                                        <span class="font-bold text-on-surface"
+                                            >NOIR CHRONO Watch</span
+                                        >
+                                    </div>
+                                </td>
+                                <td
+                                    class="px-8 py-4 text-on-surface-variant font-mono text-xs"
+                                >
+                                    SKU-11029-WHT
+                                </td>
+                                <td class="px-8 py-4 text-on-surface-variant">
+                                    Accessories
+                                </td>
+                                <td class="px-8 py-4">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-white font-bold"
+                                            >12</span
+                                        >
+                                        <div
+                                            class="w-16 bg-surface-container-highest h-1 rounded-full"
+                                        >
+                                            <div
+                                                class="bg-error h-full w-[15%]"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-4">
+                                    <span
+                                        class="bg-error/10 text-error text-[10px] font-bold px-2 py-1 rounded"
+                                        >LOW STOCK</span
+                                    >
+                                </td>
+                                <td class="px-8 py-4">
+                                    <button
+                                        class="text-on-surface-variant hover:text-white transition-colors"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-lg"
+                                            data-icon="more_vert"
+                                            >more_vert</span
+                                        >
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Table Row 3 -->
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="px-8 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 bg-surface-container-highest rounded-lg overflow-hidden border border-white/5"
+                                        >
+                                            <img
+                                                alt="Product Image"
+                                                class="w-full h-full object-cover"
+                                                data-alt="Professional studio headphones on dark metal stand with dramatic rim lighting and blue shadow accents"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmIbaeAWmkKutp7VL2WVNHAfCS1iRxjUpxOKAdfoxtoWwK4DwfiRSvgzi3KuyrHWZM2GFQKb30erTZJhbXMCEfBC-xKfDIdjtRAeZdrjPhpOPqD51MINoLuxuyNOKRYNXtk-Nc8xAsUhZfE-WHbNSzc3L5zgWHMHC5Ge2FMjpGb7oapYOGGUxFbgOq6hDEGgVMLBgEToKvAqVIlxK301cNLb6bpj5Ra9AcSKpHufOti9C4uRU0dm8SovSq3exlQck5tqpmXLsxANk"
+                                            />
+                                        </div>
+                                        <span class="font-bold text-on-surface"
+                                            >CYAN BEATS Audio</span
+                                        >
+                                    </div>
+                                </td>
+                                <td
+                                    class="px-8 py-4 text-on-surface-variant font-mono text-xs"
+                                >
+                                    SKU-88210-BLK
+                                </td>
+                                <td class="px-8 py-4 text-on-surface-variant">
+                                    Electronics
+                                </td>
+                                <td class="px-8 py-4">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-white font-bold"
+                                            >89</span
+                                        >
+                                        <div
+                                            class="w-16 bg-surface-container-highest h-1 rounded-full"
+                                        >
+                                            <div
+                                                class="bg-primary-container h-full w-[60%] shadow-[0_0_5px_rgba(0,229,255,0.3)]"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-4">
+                                    <span
+                                        class="bg-cyan-500/10 text-cyan-400 text-[10px] font-bold px-2 py-1 rounded"
+                                        >IN STOCK</span
+                                    >
+                                </td>
+                                <td class="px-8 py-4">
+                                    <button
+                                        class="text-on-surface-variant hover:text-white transition-colors"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-lg"
+                                            data-icon="more_vert"
+                                            >more_vert</span
+                                        >
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div
+                    class="px-8 py-4 flex justify-between items-center text-xs text-on-surface-variant font-label border-t border-white/5"
+                >
+                    <span>Showing 1-10 of 2,450 items</span>
+                    <div class="flex gap-2">
+                        <button class="p-1 hover:text-primary-container">
+                            <span class="material-symbols-outlined"
+                                >chevron_left</span
+                            >
+                        </button>
+                        <button class="p-1 hover:text-primary-container">
+                            <span class="material-symbols-outlined"
+                                >chevron_right</span
+                            >
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Success Feedback Overlay (Decorative) -->
+        <div
+            class="fixed bottom-8 right-8 bg-surface-container-highest border-l-4 border-primary-container px-6 py-4 rounded shadow-2xl flex items-center gap-4 animate-pulse"
+        >
+            <span
+                class="material-symbols-outlined text-primary-container"
+                data-icon="sync"
+                >sync</span
+            >
+            <div>
+                <p class="text-xs font-bold text-white">SYNCING ASSETS</p>
+                <p class="text-[10px] text-on-surface-variant">
+                    Last updated 2 mins ago
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

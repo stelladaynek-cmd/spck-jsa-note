@@ -1,0 +1,514 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Wishlist | LUMINOUS NOIR</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            "on-error-container": "#ffdad6",
+                            "secondary-container": "#314863",
+                            "surface-container": "#1f1f1f",
+                            "on-secondary-fixed": "#011d35",
+                            "secondary-fixed-dim": "#b0c9e8",
+                            "surface-container-low": "#1b1b1b",
+                            "on-primary-fixed-variant": "#004f58",
+                            outline: "#849396",
+                            "surface-container-highest": "#353535",
+                            "outline-variant": "#3b494c",
+                            "on-tertiary-fixed-variant": "#004b70",
+                            "inverse-on-surface": "#303030",
+                            "on-secondary": "#19324b",
+                            "on-primary-fixed": "#001f24",
+                            "surface-tint": "#00daf3",
+                            "on-secondary-container": "#9fb7d6",
+                            "tertiary-container": "#a4d6ff",
+                            "surface-bright": "#393939",
+                            "error-container": "#93000a",
+                            "tertiary-fixed-dim": "#8dcdff",
+                            "surface-container-high": "#2a2a2a",
+                            "on-secondary-fixed-variant": "#314863",
+                            "surface-dim": "#131313",
+                            "on-primary": "#00363d",
+                            tertiary: "#deefff",
+                            "primary-fixed-dim": "#00daf3",
+                            background: "#131313",
+                            "on-background": "#e2e2e2",
+                            "surface-container-lowest": "#0e0e0e",
+                            error: "#ffb4ab",
+                            "on-primary-container": "#00626e",
+                            "on-tertiary-container": "#005e8b",
+                            primary: "#c3f5ff",
+                            "secondary-fixed": "#d1e4ff",
+                            secondary: "#b0c9e8",
+                            "inverse-primary": "#006875",
+                            "surface-variant": "#353535",
+                            "on-tertiary-fixed": "#001e30",
+                            "primary-container": "#00e5ff",
+                            surface: "#131313",
+                            "on-surface": "#e2e2e2",
+                            "inverse-surface": "#e2e2e2",
+                            "on-error": "#690005",
+                            "tertiary-fixed": "#cae6ff",
+                            "on-surface-variant": "#bac9cc",
+                            "on-tertiary": "#00344f",
+                            "primary-fixed": "#9cf0ff",
+                        },
+                        fontFamily: {
+                            headline: ["Space Grotesk"],
+                            body: ["Manrope"],
+                            label: ["Manrope"],
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.125rem",
+                            lg: "0.25rem",
+                            xl: "0.5rem",
+                            full: "0.75rem",
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings:
+                    "FILL" 0,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
+            }
+            .neon-hover:hover {
+                box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+                border-top: 1px solid rgba(0, 229, 255, 0.4);
+            }
+            .glass-effect {
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+            }
+        </style>
+    </head>
+    <body
+        class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary"
+    >
+        <!-- TopNavBar -->
+        <nav
+            class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-cyan-500/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex justify-between items-center px-8 h-16 w-full"
+        >
+            <div
+                class="text-2xl font-bold tracking-tighter text-cyan-400 drop-shadow-[0_0_8px_rgba(0,229,255,0.5)] font-headline"
+            >
+                LUMINOUS NOIR
+            </div>
+            <div
+                class="hidden md:flex items-center gap-8 font-headline tracking-tight text-sm uppercase"
+            >
+                <a
+                    class="text-gray-400 hover:text-gray-200 transition-colors duration-300 ease-in-out hover:text-cyan-300 hover:drop-shadow-[0_0_5px_rgba(0,229,255,0.8)]"
+                    href="./shop.html"
+                    >Shop</a
+                >
+                <a
+                    class="text-cyan-400 border-b-2 border-cyan-400 pb-1 duration-300 ease-in-out hover:text-cyan-300 hover:drop-shadow-[0_0_5px_rgba(0,229,255,0.8)]"
+                    href="./index.html"
+                    >Wishlist</a
+                >
+                <a
+                    class="text-gray-400 hover:text-gray-200 transition-colors duration-300 ease-in-out hover:text-cyan-300 hover:drop-shadow-[0_0_5px_rgba(0,229,255,0.8)]"
+                    href="./order.html"
+                    >Orders</a
+                >
+            </div>
+            <div class="flex items-center gap-6">
+                <button
+                    class="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
+                >
+                    <span
+                        class="material-symbols-outlined"
+                        data-icon="shopping_cart"
+                        >shopping_cart</span
+                    >
+                </button>
+                <button
+                    class="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
+                >
+                    <span
+                        class="material-symbols-outlined"
+                        data-icon="account_circle"
+                        >account_circle</span
+                    >
+                </button>
+            </div>
+        </nav>
+        <main class="pt-28 pb-20 px-6 md:px-12 max-w-7xl mx-auto">
+            <!-- Header Section -->
+            <header class="mb-12">
+                <div class="flex flex-col gap-2">
+                    <span
+                        class="text-primary-fixed-dim font-headline text-xs tracking-[0.2em] uppercase"
+                        >Curated Collection</span
+                    >
+                    <h1
+                        class="text-4xl md:text-5xl font-headline font-bold text-on-surface tracking-tight"
+                    >
+                        Your Wishlist
+                    </h1>
+                    <p
+                        class="text-on-surface-variant max-w-lg mt-4 font-light leading-relaxed"
+                    >
+                        Artifacts reserved for your digital gallery. Review and
+                        transition your selections to ownership.
+                    </p>
+                </div>
+            </header>
+            <!-- Bento Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div
+                    class="group relative bg-surface-container rounded-xl overflow-hidden transition-all duration-500 hover:bg-surface-container-high neon-hover"
+                >
+                    <div
+                        class="aspect-[4/5] overflow-hidden bg-surface-container-lowest"
+                    >
+                        <img
+                            alt="Retro future aesthetic gaming device"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                            data-alt="high-end minimalist handheld gaming console with cyan glowing buttons on a matte black tech-wear background with moody lighting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOHuGHkocYJ8T3h-GHe5g-x-KZQxkPlKJxLqgHdQkWuECwT2QZRy_5ob1W5keWsO0a0wYz88LX9rnF_pdmNLkB30YT7x0yTnNPNdSC8PWf4w2mNRd3I7L2dHRilyrAmiEOL05CXnE35rWaz6UNe6NttMi1pfPduprZWAzuXjPVQGe_l6ZZKbbysv2ohUz62bnVkD84yOABnLeh3KrnVJi-AlsVe4Yc3MHGOepbbrABgQlHqWo5u3_r7qqU0auqAsQNzM7BamPW9DU"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3
+                                class="text-xl font-headline font-semibold text-on-surface"
+                            >
+                                NOIR CONSOLE X
+                            </h3>
+                            <span
+                                class="text-primary-fixed-dim font-headline font-medium"
+                                >$899</span
+                            >
+                        </div>
+                        <p
+                            class="text-on-surface-variant text-sm mb-6 line-clamp-2"
+                        >
+                            Ultra-limited edition handheld featuring monolithic
+                            obsidian casing and neural-link interface
+                            capabilities.
+                        </p>
+                        <div class="flex gap-3">
+                            <button
+                                class="flex-1 bg-primary-container text-on-primary py-3 px-4 rounded-lg font-headline text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_15px_#00e5ff] active:scale-[0.98]"
+                            >
+                                Add to Cart
+                            </button>
+                            <button
+                                class="p-3 border border-outline-variant/20 rounded-lg text-on-surface-variant hover:text-error hover:border-error/40 transition-all duration-300"
+                            >
+                                <span
+                                    class="material-symbols-outlined"
+                                    data-icon="delete"
+                                    >delete</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute top-4 right-4 bg-background/60 backdrop-blur-md px-3 py-1 rounded-full"
+                    >
+                        <span
+                            class="text-[10px] font-headline font-bold tracking-widest text-primary uppercase"
+                            >In Stock</span
+                        >
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div
+                    class="group relative bg-surface-container rounded-xl overflow-hidden transition-all duration-500 hover:bg-surface-container-high neon-hover"
+                >
+                    <div
+                        class="aspect-[4/5] overflow-hidden bg-surface-container-lowest"
+                    >
+                        <img
+                            alt="Luxury minimalist watch"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                            data-alt="sleek professional photography of a luxury black watch with glowing blue hands on a reflective dark surface with sharp highlights"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOFK6x4AMpINMnrY4F0ZPjaJ9mebWVgbpIiQTsMdIfLzhoWnWL0o6xTGRLO0bvjJeNoNQH73B706ju4NdcpZNeJ4u2_0QGEvc7KdlOB9KRa7LeMMSYY3HPtechzx_SmfGgdDKo0r4eh0ns8vHyjZW5Oj4PKlybke8phjdnOT_eYSVw9iiUDRV4vOr3vRr3oMbzlVXrwE6cVTQEPuktMY-rbyaa_RxrItf2JDTnMOW78faWzEuaUjlCOl3BbsR-KGL8H9ebsDHzy2I"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3
+                                class="text-xl font-headline font-semibold text-on-surface"
+                            >
+                                CYAN CHRONO
+                            </h3>
+                            <span
+                                class="text-primary-fixed-dim font-headline font-medium"
+                                >$1,250</span
+                            >
+                        </div>
+                        <p
+                            class="text-on-surface-variant text-sm mb-6 line-clamp-2"
+                        >
+                            Timepiece crafted from aerospace-grade titanium with
+                            tritium-gas light tubes for perpetual luminescence.
+                        </p>
+                        <div class="flex gap-3">
+                            <button
+                                class="flex-1 bg-primary-container text-on-primary py-3 px-4 rounded-lg font-headline text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_15px_#00e5ff] active:scale-[0.98]"
+                            >
+                                Add to Cart
+                            </button>
+                            <button
+                                class="p-3 border border-outline-variant/20 rounded-lg text-on-surface-variant hover:text-error hover:border-error/40 transition-all duration-300"
+                            >
+                                <span
+                                    class="material-symbols-outlined"
+                                    data-icon="delete"
+                                    >delete</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div
+                    class="group relative bg-surface-container rounded-xl overflow-hidden transition-all duration-500 hover:bg-surface-container-high neon-hover"
+                >
+                    <div
+                        class="aspect-[4/5] overflow-hidden bg-surface-container-lowest"
+                    >
+                        <img
+                            alt="Cyberpunk style sneaker"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                            data-alt="vibrant red and black futuristic sneaker with neon highlights floating in a dark studio with atmospheric smoke and cyan lights"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSGoJp8nA_gCrG-ZHgn0tSobLkP3Or-raa6WeWMCFBd8Pw9OaWuvH-EMENK3vNNPjd-zsLOwSShwzTqzujKh6UVcTfzeB6dG1vyQ5qMOM-fWHpTbRgsH00__HAV7VxGVPDYVUoJLUOe6kU3c5MSoqxkbS2LEMldQ2E4fl0bTiTLLkWecT2rSRw_ixCWzoYCs3tssqpt9AUpnwB72oaZ3M3mt6qCaJ_33k8-n-wd6KjpNyza8D7v4ZuMvyFlBLmctZXuxb-G5mG3I8"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3
+                                class="text-xl font-headline font-semibold text-on-surface"
+                            >
+                                VELOCITY V3
+                            </h3>
+                            <span
+                                class="text-primary-fixed-dim font-headline font-medium"
+                                >$420</span
+                            >
+                        </div>
+                        <p
+                            class="text-on-surface-variant text-sm mb-6 line-clamp-2"
+                        >
+                            Adaptive footwear with liquid-cooling channels and
+                            carbon-fiber kinetic energy plates.
+                        </p>
+                        <div class="flex gap-3">
+                            <button
+                                class="flex-1 bg-primary-container text-on-primary py-3 px-4 rounded-lg font-headline text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_15px_#00e5ff] active:scale-[0.98]"
+                            >
+                                Add to Cart
+                            </button>
+                            <button
+                                class="p-3 border border-outline-variant/20 rounded-lg text-on-surface-variant hover:text-error hover:border-error/40 transition-all duration-300"
+                            >
+                                <span
+                                    class="material-symbols-outlined"
+                                    data-icon="delete"
+                                    >delete</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute top-4 right-4 bg-error-container/80 backdrop-blur-md px-3 py-1 rounded-full"
+                    >
+                        <span
+                            class="text-[10px] font-headline font-bold tracking-widest text-on-error-container uppercase"
+                            >Low Stock</span
+                        >
+                    </div>
+                </div>
+                <!-- Product Card 4 -->
+                <div
+                    class="group relative bg-surface-container rounded-xl overflow-hidden transition-all duration-500 hover:bg-surface-container-high neon-hover"
+                >
+                    <div
+                        class="aspect-[4/5] overflow-hidden bg-surface-container-lowest"
+                    >
+                        <img
+                            alt="Audiophile headphones"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                            data-alt="premium studio headphones on a minimalist stand with soft teal rim lighting and deep shadows showcasing texture"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMIbLyiNIXcRN0EVN56V_33czzK5X2v0MjIr8Vpo6RNbS_EoY1-JKMWDnOrZkxQJEvTp7zyFWos2rwYpYlobJbolhb-GIGFv26-47F0SdLiEBRIMuqaPWXXSQjPOop_tlYAcOnr_Ywu_6Oo52wuYUpiMEdjupE2EGiKm8DA7YxclJQCRHW9uoOsf63u5FkwdXP94xl9CFBSKHbU5vXx24COFAAGEQSXN8YrAC_-sY_VT_vQSVBkfIkK1Va4s01G5Z5kWPyPWrjPm4"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3
+                                class="text-xl font-headline font-semibold text-on-surface"
+                            >
+                                SONIC SPECTRUM
+                            </h3>
+                            <span
+                                class="text-primary-fixed-dim font-headline font-medium"
+                                >$680</span
+                            >
+                        </div>
+                        <p
+                            class="text-on-surface-variant text-sm mb-6 line-clamp-2"
+                        >
+                            High-fidelity acoustic drivers housed in 3D-printed
+                            acoustic chambers for unparalleled depth.
+                        </p>
+                        <div class="flex gap-3">
+                            <button
+                                class="flex-1 bg-primary-container text-on-primary py-3 px-4 rounded-lg font-headline text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_15px_#00e5ff] active:scale-[0.98]"
+                            >
+                                Add to Cart
+                            </button>
+                            <button
+                                class="p-3 border border-outline-variant/20 rounded-lg text-on-surface-variant hover:text-error hover:border-error/40 transition-all duration-300"
+                            >
+                                <span
+                                    class="material-symbols-outlined"
+                                    data-icon="delete"
+                                    >delete</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 5 -->
+                <div
+                    class="group relative bg-surface-container rounded-xl overflow-hidden transition-all duration-500 hover:bg-surface-container-high neon-hover"
+                >
+                    <div
+                        class="aspect-[4/5] overflow-hidden bg-surface-container-lowest"
+                    >
+                        <img
+                            alt="Cyberpunk portrait print"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                            data-alt="futuristic digital art print of a neon city skyline at night with pink and cyan reflections in rain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWxGRj1uK95i_76_ADfoiJskVj1w_9HufD_ofbpGj1wkdv0fJUg8D34t1sX_vhgQaeO1OnEsrKXJi5sGs4CTquhSLmA14HJCKS0FFsIEeVQouCY14_3ebxhUefdniKjzSgcH_oTz1ZsD6cU_xymWdD6R3BNDycQsxPiX-mVEAn_uz0ZOfZjOAsxTRYcCBi-2b_U_J_abjNkfty2FP0nSlluk1cK6hs5vgVCjTgCZYPCZBncLaAVPXN2HOlN7XC8o0rDbl3k4c2KMU"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3
+                                class="text-xl font-headline font-semibold text-on-surface"
+                            >
+                                NEO-TOKYO CANVAS
+                            </h3>
+                            <span
+                                class="text-primary-fixed-dim font-headline font-medium"
+                                >$210</span
+                            >
+                        </div>
+                        <p
+                            class="text-on-surface-variant text-sm mb-6 line-clamp-2"
+                        >
+                            Limited edition holographic print with
+                            smart-reactive ink that shifts based on ambient
+                            light.
+                        </p>
+                        <div class="flex gap-3">
+                            <button
+                                class="flex-1 bg-primary-container text-on-primary py-3 px-4 rounded-lg font-headline text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_15px_#00e5ff] active:scale-[0.98]"
+                            >
+                                Add to Cart
+                            </button>
+                            <button
+                                class="p-3 border border-outline-variant/20 rounded-lg text-on-surface-variant hover:text-error hover:border-error/40 transition-all duration-300"
+                            >
+                                <span
+                                    class="material-symbols-outlined"
+                                    data-icon="delete"
+                                    >delete</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Empty Slot / Suggestion -->
+                <div
+                    class="border-2 border-dashed border-outline-variant/30 rounded-xl flex flex-col items-center justify-center p-8 text-center group cursor-pointer hover:border-primary/40 transition-all duration-500"
+                >
+                    <div
+                        class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors"
+                    >
+                        <span
+                            class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl"
+                            data-icon="add"
+                            >add</span
+                        >
+                    </div>
+                    <h4 class="font-headline font-bold text-on-surface mb-2">
+                        Explore More
+                    </h4>
+                    <p class="text-on-surface-variant text-sm px-6">
+                        Continue your journey through the gallery to find more
+                        artifacts.
+                    </p>
+                </div>
+            </div>
+            <!-- Pagination/Footer Actions -->
+            <footer
+                class="mt-20 pt-10 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-6"
+            >
+                <div class="flex items-center gap-4">
+                    <button
+                        class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-sm font-headline uppercase tracking-widest"
+                    >
+                        <span
+                            class="material-symbols-outlined text-lg"
+                            data-icon="share"
+                            >share</span
+                        >
+                        Share Wishlist
+                    </button>
+                </div>
+                <div class="flex gap-2">
+                    <button
+                        class="px-6 py-2 rounded-full border border-outline-variant/20 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all text-xs font-bold uppercase tracking-widest"
+                    >
+                        Clear List
+                    </button>
+                    <button
+                        class="px-8 py-2 rounded-full bg-on-surface text-background hover:bg-primary transition-all text-xs font-bold uppercase tracking-widest"
+                    >
+                        Move All to Cart
+                    </button>
+                </div>
+            </footer>
+        </main>
+        <!-- Floating Action Element (Hidden on detail, shown on main flows) -->
+        <div class="fixed bottom-8 right-8 z-40">
+            <button
+                class="w-14 h-14 bg-primary-container text-on-primary rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-90 hover:shadow-[0_0_20px_#00e5ff]"
+            >
+                <span class="material-symbols-outlined" data-icon="chat_bubble"
+                    >chat_bubble</span
+                >
+            </button>
+        </div>
+    </body>
+</html>
