@@ -1,348 +1,96 @@
 <!doctype html>
-
-<html class="dark" lang="en">
+<html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Register</title>
         <link
-            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap"
+            href="https://cdn.jsdelivr.net/npm/daisyui@5"
             rel="stylesheet"
+            type="text/css"
         />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-            rel="stylesheet"
-        />
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-        <script id="tailwind-config">
-            tailwind.config = {
-                darkMode: "class",
-                theme: {
-                    extend: {
-                        colors: {
-                            "on-error-container": "#ffdad6",
-                            "secondary-container": "#314863",
-                            "surface-container": "#1f1f1f",
-                            "surface-container-low": "#1b1b1b",
-                            "secondary-fixed-dim": "#b0c9e8",
-                            "on-secondary-fixed": "#011d35",
-                            outline: "#849396",
-                            "on-primary-fixed-variant": "#004f58",
-                            "surface-container-highest": "#353535",
-                            "outline-variant": "#3b494c",
-                            "on-tertiary-fixed-variant": "#004b70",
-                            "on-secondary": "#19324b",
-                            "inverse-on-surface": "#303030",
-                            "surface-tint": "#00daf3",
-                            "on-secondary-container": "#9fb7d6",
-                            "on-primary-fixed": "#001f24",
-                            "tertiary-container": "#a4d6ff",
-                            "tertiary-fixed-dim": "#8dcdff",
-                            "surface-container-high": "#2a2a2a",
-                            "surface-bright": "#393939",
-                            "error-container": "#93000a",
-                            "surface-dim": "#131313",
-                            "on-secondary-fixed-variant": "#314863",
-                            tertiary: "#deefff",
-                            "primary-fixed-dim": "#00daf3",
-                            background: "#131313",
-                            "on-primary": "#00363d",
-                            "on-tertiary-container": "#005e8b",
-                            "on-primary-container": "#00626e",
-                            "on-background": "#e2e2e2",
-                            "surface-container-lowest": "#0e0e0e",
-                            error: "#ffb4ab",
-                            "secondary-fixed": "#d1e4ff",
-                            primary: "#c3f5ff",
-                            surface: "#131313",
-                            "primary-container": "#00e5ff",
-                            "on-surface": "#e2e2e2",
-                            "inverse-surface": "#e2e2e2",
-                            "surface-variant": "#353535",
-                            secondary: "#b0c9e8",
-                            "inverse-primary": "#006875",
-                            "on-tertiary-fixed": "#001e30",
-                            "tertiary-fixed": "#cae6ff",
-                            "on-error": "#690005",
-                            "primary-fixed": "#9cf0ff",
-                            "on-tertiary": "#00344f",
-                            "on-surface-variant": "#bac9cc",
-                        },
-                        fontFamily: {
-                            headline: ["Space Grotesk"],
-                            body: ["Manrope"],
-                            label: ["Manrope"],
-                        },
-                        borderRadius: {
-                            DEFAULT: "0.125rem",
-                            lg: "0.25rem",
-                            xl: "0.5rem",
-                            full: "0.75rem",
-                        },
-                    },
-                },
-            };
-        </script>
-        <style>
-            .material-symbols-outlined {
-                font-variation-settings:
-                    "FILL" 0,
-                    "wght" 400,
-                    "GRAD" 0,
-                    "opsz" 24;
-            }
-            .neon-glow:hover {
-                box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
-            }
-            .atmospheric-bg {
-                background: radial-gradient(
-                    circle at 50% -20%,
-                    #1a2a2e 0%,
-                    #131313 70%
-                );
-            }
-            .glass-card {
-                background: rgba(31, 31, 31, 0.6);
-                backdrop-filter: blur(20px);
-            }
-            .neon-trace {
-                position: relative;
-                overflow: hidden;
-            }
-            .neon-trace::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 1px;
-                background: linear-gradient(
-                    90deg,
-                    transparent,
-                    #00e5ff,
-                    transparent
-                );
-                opacity: 0.3;
-            }
-        </style>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </head>
-    <body
-        class="bg-background text-on-background font-body min-h-screen atmospheric-bg selection:bg-primary-container selection:text-on-primary"
-    >
-        <!-- Transactional Header (Back Link Only) -->
-        <header
-            class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-8"
+    <body>
+        <!-- 1. Đổi bg-gray-100 thành dải màu xanh đậm (blue-950 to slate-950) -->
+        <div
+            class="min-h-screen bg-linear-to-br from-blue-950 to-slate-950 flex items-center justify-center p-4"
         >
-            <div
-                class="text-2xl font-headline font-bold tracking-tighter text-on-surface uppercase"
-            >
-                CYANIDE NOIR
-            </div>
-            <a
-                class="group flex items-center gap-2 text-secondary font-label text-xs tracking-widest uppercase transition-all"
-                href=""
-            >
-                <span
-                    class="material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform"
-                    >arrow_back</span
-                >
-                Back to Portal
-            </a>
-        </header>
-        <main
-            class="flex items-center justify-center min-h-screen px-6 pt-20 pb-12"
-        >
-            <div class="w-full max-w-md">
-                <!-- Center Registration Card -->
-                <div
-                    class="glass-card rounded-xl p-8 md:p-10 shadow-[0_0_40px_rgba(0,229,255,0.03)] border border-outline-variant/10 relative overflow-hidden"
-                >
-                    <!-- Visual Accent -->
-                    <div
-                        class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-gradient-to-r from-transparent via-primary-container to-transparent opacity-50"
-                    ></div>
-                    <div class="mb-10 text-center">
-                        <h1
-                            class="font-headline text-3xl font-bold tracking-tight text-on-surface mb-2"
+            <!-- 2. Tăng độ đổ bóng với shadow-2xl để form nổi bật -->
+            <div class="max-w-md w-full bg-white rounded-xl shadow-2xl p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+                    Register
+                </h2>
+
+                <form class="space-y-4" id="register-form">
+                    <div>
+                        <label
+                            class="block text-sm font-medium text-gray-700 mb-1"
+                            >Full name</label
                         >
-                            ACCESS PROTOCOL
-                        </h1>
-                        <p class="text-on-surface-variant text-sm font-light">
-                            Initialize your digital presence within the Archive.
-                        </p>
+                        <input
+                            type="text"
+                            name="fullName"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                            placeholder="Nguyen Van A"
+                        />
                     </div>
-                    <form class="space-y-6">
-                        <!-- Full Identity Field -->
-                        <div class="space-y-2">
-                            <label
-                                class="block font-label text-[10px] tracking-[0.2em] uppercase text-secondary font-medium ml-1"
-                                >Full Identity</label
-                            >
-                            <div class="group relative">
-                                <input
-                                    class="w-full bg-surface-container-highest/40 border-b border-outline-variant/30 focus:border-primary-container focus:ring-0 transition-all px-4 py-4 text-sm font-light placeholder:text-outline/50 rounded-t-lg"
-                                    placeholder="Designate legal handle"
-                                    type="text"
-                                />
-                                <div
-                                    class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary-container group-focus-within:w-full transition-all duration-500"
-                                ></div>
-                            </div>
-                        </div>
-                        <!-- Electronic Mail Field -->
-                        <div class="space-y-2">
-                            <label
-                                class="block font-label text-[10px] tracking-[0.2em] uppercase text-secondary font-medium ml-1"
-                                >Electronic Mail</label
-                            >
-                            <div class="group relative">
-                                <input
-                                    class="w-full bg-surface-container-highest/40 border-b border-outline-variant/30 focus:border-primary-container focus:ring-0 transition-all px-4 py-4 text-sm font-light placeholder:text-outline/50 rounded-t-lg"
-                                    placeholder="node@network.cipher"
-                                    type="email"
-                                />
-                                <div
-                                    class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary-container group-focus-within:w-full transition-all duration-500"
-                                ></div>
-                            </div>
-                        </div>
-                        <!-- New Security Key Field -->
-                        <div class="space-y-2">
-                            <label
-                                class="block font-label text-[10px] tracking-[0.2em] uppercase text-secondary font-medium ml-1"
-                                >New Security Key</label
-                            >
-                            <div class="group relative">
-                                <input
-                                    class="w-full bg-surface-container-highest/40 border-b border-outline-variant/30 focus:border-primary-container focus:ring-0 transition-all px-4 py-4 text-sm font-light placeholder:text-outline/50 rounded-t-lg"
-                                    placeholder="••••••••••••"
-                                    type="password"
-                                />
-                                <div
-                                    class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary-container group-focus-within:w-full transition-all duration-500"
-                                ></div>
-                                <button
-                                    class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors"
-                                    type="button"
-                                >
-                                    <span
-                                        class="material-symbols-outlined text-lg"
-                                        >visibility</span
-                                    >
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Digital Protocols Checkbox -->
-                        <div class="flex items-start gap-3 pt-2">
-                            <div class="relative flex items-center">
-                                <input
-                                    class="w-4 h-4 rounded-sm bg-surface-container-highest border-outline-variant text-primary-container focus:ring-primary-container/20 focus:ring-offset-0"
-                                    id="protocols"
-                                    type="checkbox"
-                                />
-                            </div>
-                            <label
-                                class="text-xs text-on-surface-variant leading-relaxed"
-                                for="protocols"
-                            >
-                                I acknowledge and accept the
-                                <a
-                                    class="text-primary hover:underline underline-offset-4"
-                                    href="#"
-                                    >Digital Protocols</a
-                                >
-                                and data sovereignty terms.
-                            </label>
-                        </div>
-                        <!-- Submit Button -->
-                        <button
-                            class="w-full group relative overflow-hidden rounded-lg bg-primary-container py-5 px-6 transition-all active:scale-[0.98] neon-glow"
-                            type="submit"
+                    <div>
+                        <label
+                            class="block text-sm font-medium text-gray-700 mb-1"
+                            >Email</label
                         >
-                            <div
-                                class="relative z-10 flex items-center justify-center gap-2"
-                            >
-                                <span
-                                    class="font-headline font-bold text-[13px] tracking-[0.15em] text-on-primary uppercase"
-                                    >INITIATE REGISTRATION</span
-                                >
-                                <span
-                                    class="material-symbols-outlined text-on-primary text-xl group-hover:translate-x-1 transition-transform"
-                                    >bolt</span
-                                >
-                            </div>
-                            <div
-                                class="absolute inset-0 bg-gradient-to-r from-primary-container via-white/20 to-primary-container opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
-                            ></div>
-                        </button>
-                    </form>
-                    <div
-                        class="mt-8 pt-8 border-t border-outline-variant/10 text-center"
-                    >
-                        <p
-                            class="text-xs text-secondary/60 tracking-wide font-label"
+                        <input
+                            type="email"
+                            name="email"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                            placeholder="your@email.com"
+                        />
+                    </div>
+
+                    <div>
+                        <label
+                            class="block text-sm font-medium text-gray-700 mb-1"
+                            >Password</label
                         >
-                            ALREADY SYNCED?
-                            <a
-                                class="text-primary-fixed-dim hover:text-primary-container font-bold ml-1 transition-colors"
-                                href="#"
-                                >LOGIN ACCESS</a
-                            >
-                        </p>
+                        <input
+                            type="password"
+                            name="password"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                            placeholder="••••••••"
+                        />
                     </div>
-                </div>
-                <!-- Decorative background elements -->
-                <div
-                    class="fixed bottom-0 left-0 p-8 pointer-events-none opacity-20"
-                >
-                    <div
-                        class="font-headline text-[120px] font-bold text-outline-variant leading-none tracking-tighter select-none"
+                    <div>
+                        <label
+                            class="block text-sm font-medium text-gray-700 mb-1"
+                            >Repeat Password</label
+                        >
+                        <input
+                            type="password"
+                            name="repeatPassword"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                            placeholder="••••••••"
+                        />
+                    </div>
+
+                    <!-- 3. Đổi màu nút bấm từ indigo sang blue -->
+                    <button
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 rounded-lg transition-colors shadow-lg"
                     >
-                        CN
-                    </div>
-                </div>
-                <div
-                    class="fixed bottom-12 right-12 flex flex-col items-end gap-1 opacity-40 pointer-events-none"
-                >
-                    <div class="h-[1px] w-24 bg-primary-container"></div>
-                    <div
-                        class="font-label text-[8px] tracking-[0.4em] uppercase text-secondary"
+                        Register now
+                    </button>
+                </form>
+
+                <div class="mt-6 text-center text-sm text-gray-600">
+                    Have an account?
+                    <a
+                        href="./login.html"
+                        class="text-blue-600 hover:text-blue-500 font-medium"
+                        >Login now</a
                     >
-                        Secured by Noir-Net
-                    </div>
                 </div>
             </div>
-        </main>
-        <!-- Footer Restricted -->
-        <footer
-            class="fixed bottom-0 w-full py-6 px-8 flex flex-col md:flex-row justify-between items-center gap-4 pointer-events-none"
-        >
-            <p
-                class="font-label text-[9px] tracking-[0.2em] text-on-secondary-fixed-variant uppercase"
-            >
-                © 2024 CYANIDE NOIR. ALL ARTIFACTS CURATED.
-            </p>
-            <div class="flex gap-6 pointer-events-auto">
-                <a
-                    class="font-label text-[9px] tracking-[0.2em] text-on-secondary-fixed-variant hover:text-primary transition-colors uppercase"
-                    href="#"
-                    >Terms</a
-                >
-                <a
-                    class="font-label text-[9px] tracking-[0.2em] text-on-secondary-fixed-variant hover:text-primary transition-colors uppercase"
-                    href="#"
-                    >Privacy</a
-                >
-                <a
-                    class="font-label text-[9px] tracking-[0.2em] text-on-secondary-fixed-variant hover:text-primary transition-colors uppercase"
-                    href="#"
-                    >Authenticity</a
-                >
-            </div>
-        </footer>
+        </div>
+        <script src="./js/register.js"></script>
     </body>
-    <script src="."></script>
 </html>

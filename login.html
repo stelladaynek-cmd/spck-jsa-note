@@ -1,335 +1,87 @@
 <!doctype html>
-
-<html class="dark" lang="en">
+<html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <title>CYANIDE NOIR | AUTHENTICATE</title>
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
         <link
-            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;800&amp;display=swap"
+            href="https://cdn.jsdelivr.net/npm/daisyui@5"
             rel="stylesheet"
+            type="text/css"
         />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-            rel="stylesheet"
-        />
-        <style>
-            body {
-                background-color: #131313;
-                color: #e2e2e2;
-                font-family: "Manrope", sans-serif;
-            }
-            .font-headline {
-                font-family: "Space Grotesk", sans-serif;
-            }
-            .neon-glow-primary {
-                box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
-            }
-            .neon-trace-hover:hover {
-                box-shadow: inset 0 1px 0 0 rgba(0, 229, 255, 0.4);
-            }
-            .material-symbols-outlined {
-                font-variation-settings:
-                    "FILL" 0,
-                    "wght" 400,
-                    "GRAD" 0,
-                    "opsz" 24;
-            }
-        </style>
-        <script id="tailwind-config">
-            tailwind.config = {
-                darkMode: "class",
-                theme: {
-                    extend: {
-                        colors: {
-                            "on-error-container": "#ffdad6",
-                            "secondary-container": "#314863",
-                            "surface-container": "#1f1f1f",
-                            "surface-container-low": "#1b1b1b",
-                            "secondary-fixed-dim": "#b0c9e8",
-                            "on-secondary-fixed": "#011d35",
-                            outline: "#849396",
-                            "on-primary-fixed-variant": "#004f58",
-                            "surface-container-highest": "#353535",
-                            "outline-variant": "#3b494c",
-                            "on-tertiary-fixed-variant": "#004b70",
-                            "on-secondary": "#19324b",
-                            "inverse-on-surface": "#303030",
-                            "surface-tint": "#00daf3",
-                            "on-secondary-container": "#9fb7d6",
-                            "on-primary-fixed": "#001f24",
-                            "tertiary-container": "#a4d6ff",
-                            "tertiary-fixed-dim": "#8dcdff",
-                            "surface-container-high": "#2a2a2a",
-                            "surface-bright": "#393939",
-                            "error-container": "#93000a",
-                            "surface-dim": "#131313",
-                            "on-secondary-fixed-variant": "#314863",
-                            tertiary: "#deefff",
-                            "primary-fixed-dim": "#00daf3",
-                            background: "#131313",
-                            "on-primary": "#00363d",
-                            "on-tertiary-container": "#005e8b",
-                            "on-primary-container": "#00626e",
-                            "on-background": "#e2e2e2",
-                            "surface-container-lowest": "#0e0e0e",
-                            error: "#ffb4ab",
-                            "secondary-fixed": "#d1e4ff",
-                            primary: "#c3f5ff",
-                            surface: "#131313",
-                            "primary-container": "#00e5ff",
-                            "on-surface": "#e2e2e2",
-                            "inverse-surface": "#e2e2e2",
-                            "surface-variant": "#353535",
-                            secondary: "#b0c9e8",
-                            "inverse-primary": "#006875",
-                            "on-tertiary-fixed": "#001e30",
-                            "tertiary-fixed": "#cae6ff",
-                            "on-error": "#690005",
-                            "primary-fixed": "#9cf0ff",
-                            "on-tertiary": "#00344f",
-                            "on-surface-variant": "#bac9cc",
-                        },
-                        fontFamily: {
-                            headline: ["Space Grotesk"],
-                            body: ["Manrope"],
-                            label: ["Manrope"],
-                        },
-                        borderRadius: {
-                            DEFAULT: "0.125rem",
-                            lg: "0.25rem",
-                            xl: "0.5rem",
-                            full: "0.75rem",
-                        },
-                    },
-                },
-            };
-        </script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </head>
-    <body
-        class="bg-surface selection:bg-primary-container selection:text-on-primary"
-    >
-        <!-- Background Decorative Element -->
-        <div class="fixed inset-0 -z-10 overflow-hidden">
-            <div
-                class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[120px]"
-            ></div>
-            <div
-                class="absolute bottom-[-5%] right-[-5%] w-[30%] h-[30%] rounded-full bg-secondary-container/10 blur-[100px]"
-            ></div>
-        </div>
-        <!-- Main Content Canvas -->
-        <main
-            class="min-h-screen flex items-center justify-center p-6 relative"
+    <body>
+        <!-- Thay đổi ở dòng này: Thêm bg-linear-to-br từ xanh đậm (blue-950) đến xanh đen (slate-950) -->
+        <div
+            class="min-h-screen bg-linear-to-br from-blue-950 to-slate-950 flex items-center justify-center p-4"
         >
-            <!-- Brand Logo Floating (Mandatory suppression of Shell for Login) -->
-            <div
-                class="absolute top-12 left-1/2 -translate-x-1/2 md:left-12 md:translate-x-0"
-            >
-                <h1
-                    class="font-headline text-2xl font-bold tracking-tighter text-on-surface uppercase"
-                >
-                    CYANIDE <span class="text-primary-container">NOIR</span>
-                </h1>
-            </div>
-            <!-- Authentication Container -->
-            <div class="w-full max-w-md">
-                <!-- Glassmorphism Card -->
-                <div
-                    class="bg-surface-container/60 backdrop-blur-2xl rounded-xl p-8 md:p-10 border border-outline-variant/10 neon-glow-primary transition-all duration-500 hover:bg-surface-container/80 group"
-                >
-                    <!-- Editorial Header -->
-                    <div class="mb-10 space-y-2">
-                        <h2
-                            class="font-headline text-3xl font-bold tracking-tight text-on-surface"
-                        >
-                            Secure Protocol
-                        </h2>
-                        <p
-                            class="text-on-surface-variant text-sm font-light tracking-wide"
-                        >
-                            Enter credentials to access the archival grid.
-                        </p>
-                    </div>
-                    <!-- Login Form -->
-                    <form action="#" class="space-y-6">
-                        <!-- Access Code Field -->
-                        <div class="space-y-2 group/input">
-                            <label
-                                class="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary transition-colors group-focus-within/input:text-primary-container"
-                                for="access-code"
-                            >
-                                Access Code
-                            </label>
-                            <div class="relative">
-                                <span
-                                    class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline-variant text-sm"
-                                    data-icon="fingerprint"
-                                    >fingerprint</span
-                                >
-                                <input
-                                    class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant/30 py-4 pl-12 pr-4 text-on-surface placeholder:text-outline/40 focus:ring-0 focus:border-primary-container transition-all duration-300 font-headline"
-                                    id="access-code"
-                                    placeholder="IDENTIFIER@GRID.NOIR"
-                                    type="email"
-                                />
-                            </div>
-                        </div>
-                        <!-- Encrypted Key Field -->
-                        <div class="space-y-2 group/input">
-                            <label
-                                class="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary transition-colors group-focus-within/input:text-primary-container"
-                                for="encrypted-key"
-                            >
-                                Encrypted Key
-                            </label>
-                            <div class="relative">
-                                <span
-                                    class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline-variant text-sm"
-                                    data-icon="key"
-                                    >key</span
-                                >
-                                <input
-                                    class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant/30 py-4 pl-12 pr-12 text-on-surface placeholder:text-outline/40 focus:ring-0 focus:border-primary-container transition-all duration-300 font-headline"
-                                    id="encrypted-key"
-                                    placeholder="••••••••••••"
-                                    type="password"
-                                />
-                                <button
-                                    class="absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant hover:text-primary transition-colors"
-                                    type="button"
-                                >
-                                    <span
-                                        class="material-symbols-outlined text-sm"
-                                        data-icon="visibility"
-                                        >visibility</span
-                                    >
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Options -->
-                        <div class="flex items-center justify-between pt-2">
-                            <label
-                                class="flex items-center space-x-2 cursor-pointer group/check"
-                            >
-                                <div class="relative">
-                                    <input
-                                        class="peer hidden"
-                                        type="checkbox"
-                                    />
-                                    <div
-                                        class="w-4 h-4 border border-outline-variant rounded-sm bg-surface-container-lowest peer-checked:bg-primary-container peer-checked:border-primary-container transition-all"
-                                    ></div>
-                                    <span
-                                        class="absolute inset-0 flex items-center justify-center material-symbols-outlined text-[10px] text-on-primary opacity-0 peer-checked:opacity-100"
-                                        data-icon="check"
-                                        >check</span
-                                    >
-                                </div>
-                                <span
-                                    class="text-xs text-on-surface-variant font-medium tracking-wide"
-                                    >Persist Session</span
-                                >
-                            </label>
-                            <a
-                                class="text-xs font-bold text-primary hover:text-primary-container transition-colors tracking-tight"
-                                href="#"
-                                >Forgot Credentials?</a
-                            >
-                        </div>
-                        <!-- Primary Action -->
-                        <div class="pt-4">
-                            <button
-                                class="w-full bg-primary-container py-4 text-on-primary font-headline font-bold text-sm tracking-[0.15em] uppercase rounded-md shadow-[0_0_15px_rgba(0,229,255,0.3)] hover:shadow-[0_0_25px_rgba(0,229,255,0.5)] active:scale-[0.98] transition-all duration-300"
-                                type="submit"
-                            >
-                                AUTHENTICATE
-                            </button>
-                        </div>
-                    </form>
-                    <!-- Redirect -->
-                    <div class="mt-12 text-center">
-                        <p class="text-xs text-on-surface-variant mb-4">
-                            New Artifact Collector?
-                        </p>
-                        <a
-                            class="inline-flex items-center gap-2 group/link"
-                            href="#"
-                        >
-                            <a href="./register.html">
-                                <span
-                                    class="text-sm font-bold text-primary border-b border-transparent group-hover/link:border-primary-container transition-all duration-300"
-                                    >Create Account</span
-                                ></a
-                            >
+            <div class="max-w-md w-full bg-white rounded-xl shadow-2xl p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+                    Sign In
+                </h2>
 
-                            <span
-                                class="material-symbols-outlined text-sm text-primary group-hover/link:translate-x-1 transition-transform"
-                                data-icon="arrow_forward"
-                                >arrow_forward</span
+                <form class="space-y-4" id="login-form">
+                    <div>
+                        <label
+                            class="block text-sm font-medium text-gray-700 mb-1"
+                            >Email</label
+                        >
+                        <input
+                            type="email"
+                            name="email"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                            placeholder="your@email.com"
+                        />
+                    </div>
+
+                    <div>
+                        <label
+                            class="block text-sm font-medium text-gray-700 mb-1"
+                            >Password</label
+                        >
+                        <input
+                            type="password"
+                            name="password"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                            placeholder="••••••••"
+                        />
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input
+                                type="checkbox"
+                                class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                            />
+                            <span class="ml-2 text-sm text-gray-600"
+                                >Remember me</span
                             >
-                        </a>
-                    </div>
-                </div>
-                <!-- Security Footer -->
-                <div class="mt-8 flex flex-col items-center gap-4">
-                    <div class="flex gap-6 opacity-30">
-                        <span
-                            class="material-symbols-outlined text-xl"
-                            data-icon="shield_lock"
-                            >shield_lock</span
-                        >
-                        <span
-                            class="material-symbols-outlined text-xl"
-                            data-icon="terminal"
-                            >terminal</span
-                        >
-                        <span
-                            class="material-symbols-outlined text-xl"
-                            data-icon="verified_user"
-                            >verified_user</span
+                        </label>
+                        <a
+                            href="#"
+                            class="text-sm text-blue-600 hover:text-blue-500"
+                            >Forgot password?</a
                         >
                     </div>
-                    <p
-                        class="font-headline text-[10px] text-outline tracking-[0.3em] uppercase"
+
+                    <button
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 rounded-lg transition-colors shadow-lg"
                     >
-                        AES-256 Bit Encryption Active
-                    </p>
-                </div>
-            </div>
-        </main>
-        <!-- Content Footer (Simplified for Login as per Hierarchy) -->
-        <footer class="absolute bottom-0 w-full py-8 px-8">
-            <div
-                class="max-w-none mx-auto flex flex-col md:flex-row justify-between items-center gap-4"
-            >
-                <span
-                    class="text-[10px] font-headline tracking-[0.2em] text-outline-variant/60 uppercase"
-                    >© 2024 CYANIDE NOIR. ALL ARTIFACTS CURATED.</span
-                >
-                <div class="flex gap-8">
+                        Sign In
+                    </button>
+                </form>
+
+                <div class="mt-6 text-center text-sm text-gray-600">
+                    Don't have an account?
                     <a
-                        class="text-[10px] font-headline tracking-[0.2em] text-outline-variant/60 hover:text-primary transition-colors uppercase"
-                        href="#"
-                        >Terms</a
-                    >
-                    <a
-                        class="text-[10px] font-headline tracking-[0.2em] text-outline-variant/60 hover:text-primary transition-colors uppercase"
-                        href=""
-                        >Authenticity</a
-                    >
-                    <a
-                        class="text-[10px] font-headline tracking-[0.2em] text-outline-variant/60 hover:text-primary transition-colors uppercase"
-                        href=""
-                        >Contact</a
+                        href="./register.html"
+                        class="text-blue-600 hover:text-blue-500 font-medium"
+                        >Sign up</a
                     >
                 </div>
             </div>
-        </footer>
+        </div>
+        <script src="./js/login.js"></script>
     </body>
 </html>

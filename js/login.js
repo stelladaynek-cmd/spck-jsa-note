@@ -1,14 +1,14 @@
 const loginForm = document.getElementById("login-form");
 
-// Lắng nghe sự kiện submit trên form
+// lắng nghe sự kiện submit trên form
 loginForm.addEventListener("submit", (e) => {
-    e.preventDefault(); // Tắt chức năng reload trang
+    e.preventDefault(); // tắt chức năng reload trang khi submit form
+    let email = e.target.email.value;
+    let password = e.target.password.value;
+    console.log({ email, password });
 
-    // Lấy giá trị từ input (đảm bảo input trong HTML có name="email" và name="password")
-    let email = e.target.email.value.trim();
-    let password = e.target.password.value.trim();
+    // nếu giá trị = null: rỗng thì cảnh báo
 
-    // 1. Kiểm tra rỗng
     if (!email) {
         alert("Vui lòng nhập email");
         return;
@@ -19,31 +19,21 @@ loginForm.addEventListener("submit", (e) => {
         return;
     }
 
-    // 2. Lấy dữ liệu users từ localStorage
+    // lấy ra mảng users để kiểm tra
     let users = JSON.parse(localStorage.getItem("users") || "[]");
 
-    // 3. Kiểm tra sự tồn tại của tài khoản
+    // kiểm tra xem với email và password này có tồn tại trong bể users chưa, nếu có thì biến isExising = true, ngược lại là false
     const isExisting = users.find(
-        (item) => item.email === email && item.password === password,
+        (item) => item.email == email && item.password == password,
     );
 
-    // 4. Xử lý logic đăng nhập
+    // nếu mà = true, thì có nghĩa là đúng tài khoản mật khẩu
     if (isExisting) {
-        // Đăng nhập thành công
+        console.log(isExisting);
+        // tạo ra biến user hiện tại đã đăng nhập thành công vào local
         localStorage.setItem("currentUser", JSON.stringify(isExisting));
-        alert("Đăng nhập thành công!");
-        window.location.href = "index.html";
+        window.location.href = "/index.html";
     } else {
-        // Không tìm thấy tài khoản hoặc sai mật khẩu
-        // Hiển thị lựa chọn cho người dùng
-        const confirmRegister = confirm(
-            "Tài khoản không tồn tại hoặc sai thông tin. Bạn có muốn chuyển sang trang Đăng ký không?",
-        );
-
-        if (confirmRegister) {
-            // Nếu bấm OK -> chuyển hướng
-            window.location.href = "/register.html";
-        }
-        // Nếu bấm Cancel -> ở lại trang login để nhập lại
+        alert("Sai tài khoản hoặc mật khẩu");
     }
 });

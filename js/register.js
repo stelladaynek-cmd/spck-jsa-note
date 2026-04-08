@@ -69,5 +69,5 @@ registerForm.addEventListener("submit", (e) => {
 
     alert("Đăng nhập thành công");
     //điều hướng người dùng về trang /login
-    window.location.href = "login.html";
+    window.location.href = "/login.html";
 });
