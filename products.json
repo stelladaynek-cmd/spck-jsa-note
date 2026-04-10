@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "A.419 Rọc giấy BLC",
+        "category": "Wearables / Cyber Edition",
+        "price": "$2,400",
+        "image": "https://pos.nvncdn.com/cba2a3-7534/ps/A-419-Roc-giay-BLC-ANM-26020633.jpg?v=1772614478",
+        "isLimited": false
+    },
+    {
+        "id": 2,
+        "name": "A.450 Băng dính",
+        "category": "Hardware / Processing",
+        "price": "$8,950",
+        "image": "https://pos.nvncdn.com/cba2a3-7534/ps/A-450-Bang-dinh-ANM-26020706.jpg?v=1772615744",
+        "isLimited": false
+    },
+    {
+        "id": 3,
+        "name": "SONIC VEIL VII",
+        "category": "Audio / Immersive",
+        "price": "$1,200",
+        "image": "https://pos.nvncdn.com/cba2a3-7534/ps/A-282-But-ANM-S4-26020572-1.jpg?v=1772506295",
+        "isLimited": false
+    },
+    {
+        "id": 4,
+        "name": "SYNTHETIC MANIFOLD",
+        "category": "Hardware / Abstract",
+        "price": "$12,000",
+        "image": "https://pos.nvncdn.com/cba2a3-7534/ps/20260215_jysU0CfGBX.jpeg?v=1771136331",
+        "isLimited": true
+    },
+    {
+        "id": 5,
+        "name": "VOID FRAGMENT",
+        "category": "Visuals / Digital",
+        "price": "$750",
+        "image": "",
+        "isLimited": false
+    }
+]

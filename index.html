@@ -1,22 +1,18 @@
 <!doctype html>
-
 <html class="dark" lang="en">
     <head>
         <meta charset="utf-8" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
         <link
-            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
         />
         <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
             rel="stylesheet"
         />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-            rel="stylesheet"
-        />
+
         <script id="tailwind-config">
             tailwind.config = {
                 darkMode: "class",
@@ -25,62 +21,21 @@
                         colors: {
                             "on-primary": "#00363d",
                             "inverse-on-surface": "#303030",
-                            "on-primary-fixed-variant": "#004f58",
                             "surface-tint": "#00daf3",
-                            "on-secondary-fixed-variant": "#314863",
-                            "tertiary-container": "#a4d6ff",
                             "surface-variant": "#353535",
                             "outline-variant": "#3b494c",
                             surface: "#131313",
-                            "tertiary-fixed-dim": "#8dcdff",
-                            "primary-fixed": "#9cf0ff",
-                            "surface-bright": "#393939",
-                            "on-primary-fixed": "#001f24",
-                            "inverse-primary": "#006875",
-                            "primary-container": "#00e5ff",
-                            "surface-container-low": "#1b1b1b",
-                            "primary-fixed-dim": "#00daf3",
-                            "on-tertiary-container": "#005e8b",
-                            "on-surface-variant": "#bac9cc",
-                            "on-surface": "#e2e2e2",
-                            background: "#131313",
-                            "secondary-fixed": "#d1e4ff",
                             primary: "#c3f5ff",
-                            "on-secondary-fixed": "#011d35",
-                            outline: "#849396",
-                            "surface-container-high": "#2a2a2a",
-                            "surface-container": "#1f1f1f",
-                            error: "#ffb4ab",
-                            "on-secondary": "#19324b",
-                            "secondary-fixed-dim": "#b0c9e8",
-                            "surface-dim": "#131313",
-                            "on-error": "#690005",
-                            "on-background": "#e2e2e2",
-                            "tertiary-fixed": "#cae6ff",
-                            "on-secondary-container": "#9fb7d6",
+                            "primary-container": "#00e5ff",
+                            "primary-fixed-dim": "#00daf3",
+                            "on-surface": "#e2e2e2",
                             secondary: "#b0c9e8",
-                            "on-tertiary-fixed": "#001e30",
-                            "surface-container-highest": "#353535",
-                            "on-tertiary": "#00344f",
                             "secondary-container": "#314863",
-                            "on-tertiary-fixed-variant": "#004b70",
-                            tertiary: "#deefff",
-                            "on-error-container": "#ffdad6",
-                            "surface-container-lowest": "#0e0e0e",
-                            "error-container": "#93000a",
-                            "on-primary-container": "#00626e",
-                            "inverse-surface": "#e2e2e2",
                         },
                         fontFamily: {
                             headline: ["Space Grotesk"],
                             body: ["Manrope"],
                             label: ["Manrope"],
-                        },
-                        borderRadius: {
-                            DEFAULT: "0.125rem",
-                            lg: "0.25rem",
-                            xl: "0.5rem",
-                            full: "0.75rem",
                         },
                     },
                 },
@@ -102,17 +57,21 @@
                 box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
                 border-top: 1px solid rgba(0, 229, 255, 0.3);
             }
-            .text-glow {
-                text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+            .product-card {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .product-card:hover {
+                transform: translateY(-8px);
             }
         </style>
     </head>
+
     <body
         class="bg-surface selection:bg-primary-container selection:text-on-primary"
     >
         <!-- TopNavBar -->
         <nav
-            class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-[#3b494c]/15 shadow-[0_0_20px_rgba(0,229,255,0.05)]"
+            class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-[#3b494c]/15"
         >
             <div
                 class="flex justify-between items-center px-8 h-20 w-full max-w-screen-2xl mx-auto"
@@ -120,7 +79,7 @@
                 <div
                     class="text-2xl font-bold tracking-tighter text-[#e2e2e2] uppercase font-['Space_Grotesk']"
                 >
-                   Note
+                    Note
                 </div>
                 <div
                     class="hidden md:flex items-center space-x-8 font-['Space_Grotesk'] tracking-tight"
@@ -145,43 +104,36 @@
                         href="./foradmin.html"
                         >for admin</a
                     >
-                    
                 </div>
-                <a href="./wishlist.html"><div class="flex items-center space-x-6 text-[#00e5ff]">
-                    <button
-                        class="hover:bg-[#ffffff]/5 p-2 rounded-full transition-all duration-300 active:scale-95"
+                <div class="flex items-center space-x-4">
+                    <a
+                        href="./wishlist.html"
+                        class="text-[#00e5ff] hover:bg-[#ffffff]/5 p-2 rounded-full transition-all"
                     >
                         <span class="material-symbols-outlined"
                             >shopping_cart</span
-                        > 
-                    </button>
+                        >
                     </a>
-
-                <a href="./login.html"><div class="flex items-center space-x-6 text-[#00e5ff]">
-                    <button
-                        class="hover:bg-[#ffffff]/5 p-2 rounded-full transition-all duration-300 active:scale-95"
+                    <a
+                        href="./login.html"
+                        class="text-[#00e5ff] hover:bg-[#ffffff]/5 p-2 rounded-full transition-all"
                     >
                         <span class="material-symbols-outlined"
                             >account_circle</span
                         >
-                    </button>
                     </a>
-                    
                 </div>
             </div>
         </nav>
+
         <main class="pt-20">
             <!-- Hero Section -->
             <section
-                class="relative h-[614px] flex items-center justify-center overflow-hidden border-b border-outline-variant/10"
+                class="relative h-[500px] flex items-center justify-center overflow-hidden border-b border-outline-variant/10"
             >
                 <div class="absolute inset-0 grid-pattern"></div>
                 <div
                     class="absolute inset-0 bg-gradient-to-b from-transparent via-surface/50 to-surface"
-                ></div>
-                <!-- Atmospheric Glow -->
-                <div
-                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-container/5 rounded-full blur-[120px]"
                 ></div>
                 <div class="relative z-10 text-center px-6">
                     <h1
@@ -196,20 +148,22 @@
                     <p
                         class="text-secondary font-label uppercase tracking-[0.4em] text-sm max-w-2xl mx-auto"
                     >
-                        A Curated Selection of High-End Digital Artifacts &amp;
-                        Hardware
+                        A Curated Selection of High-End Digital Artifacts
                     </p>
                 </div>
             </section>
+
             <!-- Filters & Gallery Section -->
             <section class="max-w-screen-2xl mx-auto px-8 py-16">
-                <!-- Filter Bar -->
                 <div
                     class="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-16"
                 >
-                    <div class="flex flex-wrap items-center gap-3">
+                    <div
+                        class="flex flex-wrap items-center gap-3"
+                        id="filter-buttons"
+                    >
                         <button
-                            class="px-6 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label text-xs uppercase tracking-widest transition-all"
+                            class="px-6 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label text-xs uppercase tracking-widest"
                         >
                             All Artifacts
                         </button>
@@ -217,21 +171,6 @@
                             class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label text-xs uppercase tracking-widest hover:bg-surface-container-highest transition-all"
                         >
                             Wearables
-                        </button>
-                        <button
-                            class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label text-xs uppercase tracking-widest hover:bg-surface-container-highest transition-all"
-                        >
-                            Hardware
-                        </button>
-                        <button
-                            class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label text-xs uppercase tracking-widest hover:bg-surface-container-highest transition-all"
-                        >
-                            Audio
-                        </button>
-                        <button
-                            class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label text-xs uppercase tracking-widest hover:bg-surface-container-highest transition-all"
-                        >
-                            Visuals
                         </button>
                     </div>
                     <div
@@ -246,317 +185,24 @@
                         >
                             <option>Newest First</option>
                             <option>Price High-Low</option>
-                            <option>Price Low-High</option>
                         </select>
                     </div>
                 </div>
+
+                <!-- Product Grid -->
                 <!-- Bento Grid Products -->
                 <div
+                    id="product-container"
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
-                    <!-- Product Card 1 -->
-                    <div
-                        class="group relative bg-surface-container rounded-lg overflow-hidden transition-all duration-500 neon-glow-hover"
-                    >
-                        <div
-                            class="aspect-[4/5] relative overflow-hidden bg-surface-container-low"
-                        >
-                            <img
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
-                                data-alt="Futuristic cybernetic eyewear with neon cyan glowing frames and holographic lenses in a dark studio setting"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-xrVbsDxTi7DI5D-68YH7rdmF2kn5hcFCzQjArPrWiYXQQQMjUyEjwcaXl1voLwSUyYxYFybMfez0LPzPrikcS_0S5j7-bJBfZ9CMQzqK1aQyarwWH5Wwz_WLOD4E8AOW0MmElKRwpXiYi9aMGEX_2Sdg4A_Lk9VaPTqvwgTZAeu49f528apeyZRHSQIKBtbmQAHItMHnDtE5bQGD1kMWXwPantTKPJ7-4N_-KmSNzDnVOpCwov6IEDADQiT9NHzmb676wQDINEY"
-                            />
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-60"
-                            ></div>
-                        </div>
-                        <div class="p-8">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                
-                                    <h3
-                                        class="text-xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors"
-                                    >
-                                        NEURAL LINK-01
-                                    </h3>
-                                    <p
-                                        class="text-xs font-label text-on-surface-variant uppercase tracking-widest mt-1"
-                                    >
-                                        Wearables / Cyber Edition
-                                    </p>
-                                </div>
-                                <span
-                                    class="text-primary-fixed-dim font-headline font-bold text-lg text-glow"
-                                    >$2,400</span
-                                >
-                            </div>
-                            <button
-                                class="w-full py-4 bg-primary-container text-on-primary font-headline font-bold uppercase tracking-widest rounded-md hover:bg-primary-fixed-dim transition-all active:scale-95 flex items-center justify-center gap-2"
-                            >
-                                <span
-                                    class="material-symbols-outlined text-sm"
-                                    style="
-                                        font-variation-settings: &quot;FILL&quot;
-                                            1;
-                                    "
-                                    >add_shopping_cart</span
-                                >
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                    <!-- Product Card 2 -->
-                    <div
-                        class="group relative bg-surface-container rounded-lg overflow-hidden transition-all duration-500 neon-glow-hover"
-                    >
-                        <div
-                            class="aspect-[4/5] relative overflow-hidden bg-surface-container-low"
-                        >
-                            <img
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
-                                data-alt="Sleek black hardware terminal with glowing cyan fiber optic ports and internal liquid cooling visible through glass"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx063zgQXImTb3X_bZc6oT2lZ5w94MLXqcZ_xNCDz2WM7c9jKW--q3yXiiXKRQUPlgZBU_T8t6oNXmVXnEm8m4PQFxOl33QalxwVCsyw21WntZ3yFm0eF2EduNqZIbvmaxu3pt10Jj2XV8fOvxMP72NsoKiHCHcLa51Q21AzCJFCIR22jICkn1tu1Vukjodz6Vz4-fkQkJ2T4p0KuO5RSVMbuYIRkrEkQx3RnLnTxf6-e_k9gSvs_cue_cNqJ9yZzE7-L18qxuias"
-                            />
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-60"
-                            ></div>
-                        </div>
-                        <div class="p-8">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <h3
-                                        class="text-xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors"
-                                    >
-                                        CORE RADIUS X
-                                    </h3>
-                                    <p
-                                        class="text-xs font-label text-on-surface-variant uppercase tracking-widest mt-1"
-                                    >
-                                        Hardware / Processing
-                                    </p>
-                                </div>
-                                <span
-                                    class="text-primary-fixed-dim font-headline font-bold text-lg text-glow"
-                                    >$8,950</span
-                                >
-                            </div>
-                            <button
-                                class="w-full py-4 bg-primary-container text-on-primary font-headline font-bold uppercase tracking-widest rounded-md hover:bg-primary-fixed-dim transition-all active:scale-95 flex items-center justify-center gap-2"
-                            >
-                                <span
-                                    class="material-symbols-outlined text-sm"
-                                    style="
-                                        font-variation-settings: &quot;FILL&quot;
-                                            1;
-                                    "
-                                    >add_shopping_cart</span
-                                >
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                    <!-- Product Card 3 -->
-                    <div
-                        class="group relative bg-surface-container rounded-lg overflow-hidden transition-all duration-500 neon-glow-hover"
-                    >
-                        <div
-                            class="aspect-[4/5] relative overflow-hidden bg-surface-container-low"
-                        >
-                            <img
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
-                                data-alt="Minimalist high-end headphones with matte black finish and thin pulsing cyan light ring on the ear cups"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTjd37w22P0zPzninyovaf3t_0jglbf2HY5xfZ-2-2WNnHAsZ8KAcTquD86IzalHZMKn_uCxftCrkEpbS2x7KC5fcBtlsEjXwch2Rn1nkELeJ30I-lYMt_l8HHmhBT0vvd2V092xCpvZP-Zmm1BQqPCci_5FQ5TFpyOR_53qaX8MQV8XKgKk8wb0ZZdM6BEhJWqp_RUM7gAZQdTzRmy0jJmWPMBKwf3ZoJtE4O5JoTB5o44F_aXWqM_jJW_OJrFGCn1936ZyFD44M"
-                            />
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-60"
-                            ></div>
-                        </div>
-                        <div class="p-8">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <h3
-                                        class="text-xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors"
-                                    >
-                                        SONIC VEIL VII
-                                    </h3>
-                                    <p
-                                        class="text-xs font-label text-on-surface-variant uppercase tracking-widest mt-1"
-                                    >
-                                        Audio / Immersive
-                                    </p>
-                                </div>
-                                <span
-                                    class="text-primary-fixed-dim font-headline font-bold text-lg text-glow"
-                                    >$1,200</span
-                                >
-                            </div>
-                            <button
-                                class="w-full py-4 bg-primary-container text-on-primary font-headline font-bold uppercase tracking-widest rounded-md hover:bg-primary-fixed-dim transition-all active:scale-95 flex items-center justify-center gap-2"
-                            >
-                                <span
-                                    class="material-symbols-outlined text-sm"
-                                    style="
-                                        font-variation-settings: &quot;FILL&quot;
-                                            1;
-                                    "
-                                    >add_shopping_cart</span
-                                >
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                    <!-- Product Card 4 -->
-                    <div
-                        class="group relative bg-surface-container rounded-lg overflow-hidden transition-all duration-500 neon-glow-hover lg:col-span-2"
-                    >
-                        <div
-                            class="aspect-[16/9] relative overflow-hidden bg-surface-container-low"
-                        >
-                            <img
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-                                data-alt="Macro view of complex circuit board with electric cyan energy pathways flowing like rivers through dark architecture"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO6OskP8d941RVt8fA0hdvgbBSpBp01kocy23pZZuIaSQCqZFw6NbW3CqPJh59akk214hwt1p4r6WMBe-42j5t6t8UF9irABL9LZDBbBjy9cycSYdRY0-cOtcxdb1jf7drVtaUF4iaawKyVJRL4EZ8AuxepdtE4S1cSIDiC1feusdjWMwtuRuMouRXALQAiCiUVyVkaJrvquLHfAchHvmwfg7zoWwPMznnTRo8ecVWkiZbjdp_J3LygJvw-meJSjFbFbJFm5yDGow"
-                            />
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-70"
-                            ></div>
-                            <div class="absolute bottom-8 left-8">
-                                <span
-                                    class="px-3 py-1 bg-primary-container text-on-primary text-[10px] font-headline font-bold tracking-[0.2em] rounded-sm mb-2 inline-block"
-                                    >LIMITED EDITION</span
-                                >
-                                <h3
-                                    class="text-3xl font-headline font-bold text-on-surface"
-                                >
-                                    SYNTHETIC MANIFOLD
-                                </h3>
-                            </div>
-                        </div>
-                        <div
-                            class="p-8 flex items-center justify-between border-t border-outline-variant/10"
-                        >
-                            <div class="flex items-center gap-6">
-                                <div>
-                                    <p
-                                        class="text-xs font-label text-on-surface-variant uppercase tracking-widest"
-                                    >
-                                        Type
-                                    </p>
-                                    <p
-                                        class="text-sm font-headline text-on-surface"
-                                    >
-                                        Hardware / Abstract
-                                    </p>
-                                </div>
-                                <div
-                                    class="h-8 w-[1px] bg-outline-variant/20"
-                                ></div>
-                                <div>
-                                    <p
-                                        class="text-xs font-label text-on-surface-variant uppercase tracking-widest"
-                                    >
-                                        Price
-                                    </p>
-                                    <p
-                                        class="text-sm font-headline text-primary-fixed-dim font-bold"
-                                    >
-                                        $12,000
-                                    </p>
-                                </div>
-                            </div>
-                            <button
-                                class="px-12 py-4 bg-primary-container text-on-primary font-headline font-bold uppercase tracking-widest rounded-md hover:bg-primary-fixed-dim transition-all active:scale-95"
-                            >
-                                Acquire Artifact
-                            </button>
-                        </div>
-                    </div>
-                    <!-- Product Card 5 -->
-                    <div
-                        class="group relative bg-surface-container rounded-lg overflow-hidden transition-all duration-500 neon-glow-hover"
-                    >
-                        <div
-                            class="aspect-[4/5] relative overflow-hidden bg-surface-container-low"
-                        >
-                            <img
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
-                                data-alt="Abstract 3D digital sculpture made of liquid chrome and glowing cyan light suspended in a dark void"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJaqy6bF-nYvvjJdf8Z5RxYqkqf5OZr6GAm_qUEU9lOz7PynnN7EzHooXB9LoEPF3MpE4b4981zMXR78WVXhilbI4lifLmYAnZJ9dCqPcxZOqAmaHsSzrg2n8-VsKBHqS3-6fcWeW5gj8eSyLUYa4JDzIxmQD9QntLuwPELQAAqOKqKc8CGtw40duZtRwhqUychOlFFQsi2LmKt_dYWQXQNxYYOvKUpbLFrziu5iMTUrcAr-WULkde4QwSpznBjdHMeXJAQ7aYSYc"
-                            />
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-60"
-                            ></div>
-                        </div>
-                        <div class="p-8">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <h3
-                                        class="text-xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors"
-                                    >
-                                        VOID FRAGMENT
-                                    </h3>
-                                    <p
-                                        class="text-xs font-label text-on-surface-variant uppercase tracking-widest mt-1"
-                                    >
-                                        Visuals / Digital
-                                    </p>
-                                </div>
-                                <span
-                                    class="text-primary-fixed-dim font-headline font-bold text-lg text-glow"
-                                    >$750</span
-                                >
-                            </div>
-                            <button
-                                class="w-full py-4 bg-primary-container text-on-primary font-headline font-bold uppercase tracking-widest rounded-md hover:bg-primary-fixed-dim transition-all active:scale-95 flex items-center justify-center gap-2"
-                            >
-                                <span
-                                    class="material-symbols-outlined text-sm"
-                                    style="
-                                        font-variation-settings: &quot;FILL&quot;
-                                            1;
-                                    "
-                                    >add_shopping_cart</span
-                                >
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Newsletter / CTA -->
-            <section
-                class="max-w-screen-2xl mx-auto px-8 py-32 border-t border-outline-variant/10 text-center"
-            >
-                <div class="max-w-xl mx-auto">
-                    <h2
-                        class="text-4xl font-headline font-bold text-on-surface mb-6"
-                    >
-                        JOIN THE INNER CIRCLE
-                    </h2>
-                    <p
-                        class="text-on-surface-variant font-body mb-10 leading-relaxed"
-                    >
-                        Early access to limited artifact drops, technical
-                        deep-dives, and exclusive exhibition invites.
-                    </p>
-                    <div class="flex gap-4">
-                        <input
-                            class="flex-1 bg-surface-container-high border-none rounded-md px-6 py-4 text-on-surface font-label text-sm tracking-widest focus:ring-1 focus:ring-primary-container transition-all"
-                            placeholder="YOUR_ENCRYPTED_EMAIL"
-                            type="email"
-                        />
-                        <button
-                            class="px-8 py-4 bg-primary-fixed-dim text-on-primary font-headline font-bold uppercase tracking-widest rounded-md hover:brightness-110 transition-all active:scale-95"
-                        >
-                            Connect
-                        </button>
-                    </div>
+                    <!-- Dữ liệu sẽ tự động đổ vào đây bởi JavaScript -->
                 </div>
             </section>
         </main>
+
         <!-- Footer -->
         <footer
-            class="bg-[#131313] w-full py-12 px-8 border-t border-[#3b494c]/15"
+            class="bg-[#131313] w-full py-12 px-8 border-t border-[#3b494c]/15 mt-20"
         >
             <div
                 class="flex flex-col md:flex-row justify-between items-center gap-6 w-full max-w-screen-2xl mx-auto"
@@ -566,28 +212,6 @@
                 >
                     CYANIDE NOIR
                 </div>
-                <div class="flex gap-8">
-                    <a
-                        class="text-[#b0c9e8] font-['Manrope'] text-xs uppercase tracking-widest hover:text-[#00e5ff] transition-colors"
-                        href="#"
-                        >Privacy</a
-                    >
-                    <a
-                        class="text-[#b0c9e8] font-['Manrope'] text-xs uppercase tracking-widest hover:text-[#00e5ff] transition-colors"
-                        href="#"
-                        >Terms</a
-                    >
-                    <a
-                        class="text-[#b0c9e8] font-['Manrope'] text-xs uppercase tracking-widest hover:text-[#00e5ff] transition-colors"
-                        href="#"
-                        >Shipping</a
-                    >
-                    <a
-                        class="text-[#b0c9e8] font-['Manrope'] text-xs uppercase tracking-widest hover:text-[#00e5ff] transition-colors"
-                        href="#"
-                        >Contact</a
-                    >
-                </div>
                 <div
                     class="text-[#b0c9e8] font-['Manrope'] text-xs uppercase tracking-widest opacity-80"
                 >
@@ -595,6 +219,6 @@
                 </div>
             </div>
         </footer>
+        <script src="./js/index.js"></script>
     </body>
-    <script src="login.js"></script>
 </html>
