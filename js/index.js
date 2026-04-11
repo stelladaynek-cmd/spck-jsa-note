@@ -26,27 +26,15 @@ async function loadProducts() {
                 const colSpan = product.isLimited ? "lg:col-span-2" : "";
 
                 return `
-                <div class="group relative bg-[#1c1c1c] rounded-lg overflow-hidden transition-all duration-500 border border-[#3b494c]/20 ${colSpan} hover:shadow-[0_0_20px_rgba(0,229,255,0.15)]">
-                    <div class="relative overflow-hidden aspect-video">
-                        <img src="${product.image}" 
-                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" 
-                             alt="${product.name}">
-                        ${product.isLimited ? '<span class="absolute top-4 left-4 bg-[#00e5ff] text-[#00363d] text-[10px] font-bold px-2 py-1 rounded-sm">LIMITED</span>' : ""}
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-white uppercase tracking-tighter group-hover:text-[#00e5ff] transition-colors">${product.name}</h3>
-                                <p class="text-xs text-[#b0c9e8] uppercase tracking-widest mt-1">${product.category}</p>
-                            </div>
-                            <span class="text-[#00e5ff] font-bold text-lg">${product.price}</span>
-                        </div>
-                        <button class="w-full bg-[#00e5ff]/10 border border-[#00e5ff]/50 text-[#00e5ff] py-3 rounded-md font-bold text-xs hover:bg-[#00e5ff] hover:text-[#00363d] transition-all active:scale-95 flex items-center justify-center gap-2">
-                            <span class="material-symbols-outlined text-sm">add_shopping_cart</span>
-                            ACQUIRE ARTIFACT
-                        </button>
-                    </div>
-                </div>
+    <a href="trangchitiet.html?id=${product.id}" class="group block relative ...">
+        <div class="relative overflow-hidden aspect-video">
+            <img src="${product.image}" class="...">
+        </div>
+        <div class="p-6">
+            <h3 class="text-xl font-bold text-white uppercase">${product.name}</h3>
+            <p class="text-[#00e5ff]">${product.price}</p>
+        </div>
+    </a>
             `;
             })
             .join("");
@@ -54,6 +42,24 @@ async function loadProducts() {
         console.error("Lỗi Cyber-Network:", error);
         container.innerHTML = `<p class="text-red-500 font-mono">Error: Failed to fetch data artifacts.</p>`;
     }
+}
+// Giả sử đây là hàm render sản phẩm ở trang chủ của bạn
+function renderProducts(products) {
+    const container = document.getElementById("product-list");
+    container.innerHTML = products
+        .map(
+            (product) => `
+        <div class="product-card">
+            <!-- QUAN TRỌNG: Truyền id vào đường dẫn -->
+            <a href="product-detail.html?id=${product.id}">
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>${product.price}</p>
+            </a>
+        </div>
+    `,
+        )
+        .join("");
 }
 
 // Kích hoạt khi trang đã sẵn sàng
