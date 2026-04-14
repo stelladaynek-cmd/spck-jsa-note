@@ -36,15 +36,16 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch((error) => console.error("Lỗi khi tải JSON:", error));
 
-    // 5. Xử lý sự kiện nút ADD TO CART
+    // Tìm đoạn xử lý nút ADD TO CART trong detail.js và cập nhật:
     document.querySelector(".btn-add-cart").onclick = () => {
         if (currentProduct) {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            // ... logic thêm sản phẩm vào mảng cart ...
+            // Lưu sản phẩm này vào "chỗ đợi" để thanh toán
+            localStorage.setItem(
+                "pendingOrder",
+                JSON.stringify(currentProduct),
+            );
 
-            localStorage.setItem("cart", JSON.stringify(cart));
-
-            // Chuyển hướng ngay lập tức
+            // Chuyển hướng sang trang checkout
             window.location.href = "checkout.html";
         }
     };

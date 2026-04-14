@@ -3,54 +3,41 @@
  */
 async function loadProducts() {
     const container = document.getElementById("product-container");
-
-    // Kiểm tra nếu không tìm thấy container thì dừng lại để tránh lỗi
     if (!container) return;
 
     try {
-        // Gọi file dữ liệu
+        // BƯỚC 1: Lấy sản phẩm gốc từ file JSON
         const response = await fetch("./products.json");
+        const originalProducts = await response.json();
 
-        if (!response.ok) {
-            throw new Error(
-                "Không thể tải file products.json. Hãy chắc chắn file tồn tại.",
-            );
-        }
+        // BƯỚC 2: Lấy sản phẩm bạn đã tự thêm từ LocalStorage
+        const customProducts =
+            JSON.parse(localStorage.getItem("customProducts")) || [];
 
-        const products = await response.json();
+        // BƯỚC 3: GỘP CẢ HAI LẠI THÀNH MỘT MẢNG DUY NHẤT
+        const allProducts = [...originalProducts, ...customProducts];
 
-        // Đổ dữ liệu vào HTML
-        container.innerHTML = products
+        // BƯỚC 4: Hiển thị toàn bộ ra màn hình
+        container.innerHTML = allProducts
             .map((product) => {
-                // Kiểm tra xem sản phẩm có phải bản giới hạn để chỉnh kích thước
                 const colSpan = product.isLimited ? "lg:col-span-2" : "";
-
                 return `
-    <div class="group relative bg-[#1c1c1c] rounded-lg overflow-hidden border border-[#3b494c]/20 ${colSpan}">
-        <a href="trangchitiet.html?id=${product.id}" class="block">
-            <div class="relative overflow-hidden aspect-video">
-                <img src="${product.image}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-bold text-white uppercase">${product.name}</h3>
-                <p class="text-[#00e5ff]">${product.price}</p>
-            </div>
-        </a>
-        <div class="px-6 pb-6">
-            <button 
-                onclick="addToCart(event, '${product.id}', '${product.name}', '${product.price}', '${product.image}')"
-                class="w-full bg-[#00e5ff]/10 border border-[#00e5ff]/50 text-[#00e5ff] py-3 rounded-md font-bold text-xs hover:bg-[#00e5ff] hover:text-[#00363d] transition-all flex items-center justify-center gap-2">
-                <span class="material-symbols-outlined text-sm">add_shopping_cart</span>
-                ACQUIRE ARTIFACT
-            </button>
-        </div>
-    </div>
+                <div class="group relative bg-[#1c1c1c] rounded-lg overflow-hidden border border-[#3b494c]/20 ${colSpan}">
+                    <a href="trangchitiet.html?id=${product.id}" class="block">
+                        <div class="relative aspect-video">
+                            <img src="${product.image}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white">${product.name}</h3>
+                            <p class="text-cyan-400 font-bold">${product.price}</p>
+                        </div>
+                    </a>
+                </div>
             `;
             })
             .join("");
     } catch (error) {
-        console.error("Lỗi Cyber-Network:", error);
-        container.innerHTML = `<p class="text-red-500 font-mono">Error: Failed to fetch data artifacts.</p>`;
+        console.error("Lỗi tải sản phẩm:", error);
     }
 }
 // Giả sử đây là hàm render sản phẩm ở trang chủ của bạn
@@ -92,5 +79,45 @@ function addToCart(event, id, name, price, image) {
 
     alert(`Đã thêm ${name} vào giỏ hàng!`);
 }
+async function loadProducts() {
+    const container = document.getElementById("product-container");
+    if (!container) return;
+
+    try {
+        // Tải hàng từ JSON
+        const response = await fetch("./products.json");
+        const originalProducts = await response.json();
+
+        // Tải hàng từ LocalStorage (hàng bạn vừa thêm ở foradmin.html)
+        const customProducts =
+            JSON.parse(localStorage.getItem("customProducts")) || [];
+
+        // GỘP CHÚNG LẠI
+        const allProducts = [...originalProducts, ...customProducts];
+
+        // Vẽ ra màn hình
+        container.innerHTML = allProducts
+            .map((product) => {
+                const colSpan = product.isLimited ? "lg:col-span-2" : "";
+                return `
+                <div class="group relative bg-[#1c1c1c] rounded-lg overflow-hidden border border-[#3b494c]/20 ${colSpan}">
+                    <a href="trangchitiet.html?id=${product.id}" class="block">
+                        <div class="relative aspect-video">
+                            <img src="${product.image}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">${product.name}</h3>
+                            <p class="text-cyan-400 font-bold">${product.price}</p>
+                        </div>
+                    </a>
+                </div>
+            `;
+            })
+            .join("");
+    } catch (e) {
+        console.error("Lỗi:", e);
+    }
+}
+
 // Kích hoạt khi trang đã sẵn sàng
 document.addEventListener("DOMContentLoaded", loadProducts);

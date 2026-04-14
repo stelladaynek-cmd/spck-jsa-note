@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html class="dark" lang="en">
     <head>
         <meta charset="utf-8" />
@@ -7,513 +6,62 @@
         <title>LUMINOUS NOIR | Order Tracking</title>
         <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
         <link
-            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
         />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-            rel="stylesheet"
-        />
-        <script id="tailwind-config">
-            tailwind.config = {
-                darkMode: "class",
-                theme: {
-                    extend: {
-                        colors: {
-                            "on-error-container": "#ffdad6",
-                            "secondary-container": "#314863",
-                            "surface-container": "#1f1f1f",
-                            "on-secondary-fixed": "#011d35",
-                            "secondary-fixed-dim": "#b0c9e8",
-                            "surface-container-low": "#1b1b1b",
-                            "on-primary-fixed-variant": "#004f58",
-                            outline: "#849396",
-                            "surface-container-highest": "#353535",
-                            "outline-variant": "#3b494c",
-                            "on-tertiary-fixed-variant": "#004b70",
-                            "inverse-on-surface": "#303030",
-                            "on-secondary": "#19324b",
-                            "on-primary-fixed": "#001f24",
-                            "surface-tint": "#00daf3",
-                            "on-secondary-container": "#9fb7d6",
-                            "tertiary-container": "#a4d6ff",
-                            "surface-bright": "#393939",
-                            "error-container": "#93000a",
-                            "tertiary-fixed-dim": "#8dcdff",
-                            "surface-container-high": "#2a2a2a",
-                            "on-secondary-fixed-variant": "#314863",
-                            "surface-dim": "#131313",
-                            "on-primary": "#00363d",
-                            tertiary: "#deefff",
-                            "primary-fixed-dim": "#00daf3",
-                            background: "#131313",
-                            "on-background": "#e2e2e2",
-                            "surface-container-lowest": "#0e0e0e",
-                            error: "#ffb4ab",
-                            "on-primary-container": "#00626e",
-                            "on-tertiary-container": "#005e8b",
-                            primary: "#c3f5ff",
-                            "secondary-fixed": "#d1e4ff",
-                            secondary: "#b0c9e8",
-                            "inverse-primary": "#006875",
-                            "surface-variant": "#353535",
-                            "on-tertiary-fixed": "#001e30",
-                            "primary-container": "#00e5ff",
-                            surface: "#131313",
-                            "on-surface": "#e2e2e2",
-                            "inverse-surface": "#e2e2e2",
-                            "on-error": "#690005",
-                            "tertiary-fixed": "#cae6ff",
-                            "on-surface-variant": "#bac9cc",
-                            "on-tertiary": "#00344f",
-                            "primary-fixed": "#9cf0ff",
-                        },
-                        fontFamily: {
-                            headline: ["Space Grotesk"],
-                            body: ["Manrope"],
-                            label: ["Manrope"],
-                        },
-                        borderRadius: {
-                            DEFAULT: "0.125rem",
-                            lg: "0.25rem",
-                            xl: "0.5rem",
-                            full: "0.75rem",
-                        },
-                    },
-                },
-            };
-        </script>
-        <style>
-            .material-symbols-outlined {
-                font-variation-settings:
-                    "FILL" 0,
-                    "wght" 400,
-                    "GRAD" 0,
-                    "opsz" 24;
-            }
-            .neon-trace-hover:hover {
-                box-shadow:
-                    0 -1px 0 0 #00daf3 inset,
-                    0 0 15px rgba(0, 218, 243, 0.1);
-            }
-        </style>
     </head>
-    <body
-        class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary"
-    >
-        <!-- Top Navigation Bar -->
-        <nav
-            class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-cyan-500/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex justify-between items-center px-8 h-16 w-full"
-        >
-            <div
-                class="text-2xl font-bold tracking-tighter text-cyan-400 drop-shadow-[0_0_8px_rgba(0,229,255,0.5)] font-headline"
-            >
-                LUMINOUS NOIR
+    <body class="bg-[#0a0a0a] text-white font-['Manrope']">
+        <main class="max-w-7xl mx-auto px-8 py-20">
+            <div class="mb-12">
+                <p
+                    class="text-primary text-xs font-bold uppercase tracking-[0.3em] mb-2"
+                >
+                    Purchase Successful
+                </p>
+                <h1
+                    id="order-id-title"
+                    class="text-4xl md:text-6xl font-bold tracking-tighter"
+                >
+                    Order #-------
+                </h1>
             </div>
-            <div
-                class="hidden md:flex gap-8 items-center font-headline tracking-tight text-sm uppercase"
-            >
-                <a
-                    class="text-gray-400 hover:text-gray-200 transition-colors duration-300 ease-in-out hover:drop-shadow-[0_0_5px_rgba(0,229,255,0.8)]"
-                    href="./index.html"
-                    >Shop</a
-                >
-                <a
-                    class="text-gray-400 hover:text-gray-200 transition-colors duration-300 ease-in-out hover:drop-shadow-[0_0_5px_rgba(0,229,255,0.8)]"
-                    href="./index.html"
-                    >Wishlist</a
-                >
-                <a
-                    class="text-cyan-400 border-b-2 border-cyan-400 pb-1 duration-300 ease-in-out"
-                    href="./order.html"
-                    >Orders</a
-                >
-            </div>
-            <div class="flex gap-6 items-center">
-                <button
-                    class="text-on-surface-variant hover:text-primary transition-colors"
-                >
-                    <span
-                        class="material-symbols-outlined"
-                        data-icon="shopping_cart"
-                        >shopping_cart</span
-                    >
-                </button>
-                <button
-                    class="text-on-surface-variant hover:text-primary transition-colors"
-                >
-                    <span
-                        class="material-symbols-outlined"
-                        data-icon="account_circle"
-                        >account_circle</span
-                    >
-                </button>
-            </div>
-        </nav>
-        <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
-            <!-- Page Header -->
-            <header class="mb-12">
-                <div
-                    class="flex flex-col md:flex-row md:items-end justify-between gap-6"
-                >
-                    <div>
-                        <h1
-                            class="font-headline text-4xl font-bold tracking-tight text-on-surface mb-2"
-                        >
-                            Order #LN-882910
-                        </h1>
-                        <p class="text-on-surface-variant font-medium">
-                            Placed on October 24, 2023 • 2 Items
-                        </p>
-                    </div>
-                    <a href="./contactforsp.html">
-                        <button
-                            class="px-6 py-3 bg-primary-container text-on-primary font-headline font-bold text-sm tracking-widest uppercase rounded-lg shadow-[0_0_15px_rgba(0,229,255,0.3)] hover:shadow-[0_0_25px_rgba(0,229,255,0.5)] transition-all flex items-center gap-2"
-                        >
-                            <span
-                                class="material-symbols-outlined text-sm"
-                                data-icon="support_agent"
-                                >support_agent</span
-                            >
-                            Contact Support
-                        </button></a
-                    >
-                </div>
-            </header>
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <!-- Left Column: Tracking & Status -->
-                <div class="lg:col-span-8 space-y-8">
-                    <!-- Progress Stepper Card -->
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-8">
                     <section
-                        class="bg-surface-container-low p-8 rounded-xl relative overflow-hidden"
+                        class="bg-[#111] rounded-3xl p-8 border border-white/5"
                     >
-                        <div
-                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-fixed-dim/20 via-primary-fixed-dim to-primary-fixed-dim/20 opacity-30"
-                        ></div>
                         <h2
-                            class="font-headline text-lg font-bold text-primary mb-10 tracking-wide uppercase"
-                        >
-                            Shipping Status
-                        </h2>
-                        <div class="relative flex justify-between items-start">
-                            <!-- Progress Line Background -->
-                            <div
-                                class="absolute top-5 left-0 w-full h-0.5 bg-surface-container-highest"
-                            ></div>
-                            <!-- Active Progress Line -->
-                            <div
-                                class="absolute top-5 left-0 w-[50%] h-0.5 bg-primary shadow-[0_0_10px_rgba(0,218,243,0.5)]"
-                            ></div>
-                            <!-- Step 1: Processing -->
-                            <div
-                                class="relative z-10 flex flex-col items-center text-center"
-                            >
-                                <div
-                                    class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[0_0_15px_rgba(0,218,243,0.4)] mb-4"
-                                >
-                                    <span
-                                        class="material-symbols-outlined text-xl"
-                                        data-icon="check"
-                                        data-weight="fill"
-                                        style="
-                                            font-variation-settings: &quot;FILL&quot;
-                                                1;
-                                        "
-                                        >check</span
-                                    >
-                                </div>
-                                <span
-                                    class="font-headline font-bold text-sm text-on-surface"
-                                    >Processing</span
-                                >
-                                <span
-                                    class="text-xs text-on-surface-variant mt-1"
-                                    >Oct 24, 10:30 AM</span
-                                >
-                            </div>
-                            <!-- Step 2: Shipping -->
-                            <div
-                                class="relative z-10 flex flex-col items-center text-center"
-                            >
-                                <div
-                                    class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[0_0_15px_rgba(0,218,243,0.4)] mb-4"
-                                >
-                                    <span
-                                        class="material-symbols-outlined text-xl"
-                                        data-icon="local_shipping"
-                                        >local_shipping</span
-                                    >
-                                </div>
-                                <span
-                                    class="font-headline font-bold text-sm text-on-surface"
-                                    >Shipping</span
-                                >
-                                <span
-                                    class="text-xs text-on-surface-variant mt-1"
-                                    >In Transit - Oct 26</span
-                                >
-                            </div>
-                            <!-- Step 3: Delivered -->
-                            <div
-                                class="relative z-10 flex flex-col items-center text-center"
-                            >
-                                <div
-                                    class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center mb-4"
-                                >
-                                    <span
-                                        class="material-symbols-outlined text-xl"
-                                        data-icon="package_2"
-                                        >package_2</span
-                                    >
-                                </div>
-                                <span
-                                    class="font-headline font-bold text-sm text-on-surface-variant"
-                                    >Delivered</span
-                                >
-                                <span
-                                    class="text-xs text-on-surface-variant mt-1"
-                                    >Estimated Oct 28</span
-                                >
-                            </div>
-                        </div>
-                    </section>
-                    <!-- Order Items List -->
-                    <section class="bg-surface-container p-8 rounded-xl">
-                        <h2
-                            class="font-headline text-lg font-bold text-on-surface mb-6"
+                            class="text-lg font-bold mb-6 uppercase tracking-widest"
                         >
                             Order Items
                         </h2>
-                        <div class="space-y-6">
-                            <!-- Item 1 -->
-                            <div
-                                class="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-4 rounded-lg bg-surface-container-low transition-colors hover:bg-surface-container-high neon-trace-hover group"
-                            >
-                                <div
-                                    class="w-24 h-24 rounded overflow-hidden bg-surface-container-highest flex-shrink-0"
-                                >
-                                    <img
-                                        alt="Cyberpunk style wrist watch"
-                                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                        data-alt="Minimalist high-tech smartwatch with glowing cyan interface on a dark metallic background with moody dramatic lighting"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaLkhTPkNwojiwT4ipzHr1bG6jBx-cHshHudy1aoJsMHIV32A6QSqnM4Kz0-VtkqAVBjALX5BbFfsUS4aMLd7iSp0mCqN4eXrx5kq24ay7IWTHhWCCmA4Dx22Y6pCzJB8xqU-EvIi00UDrP2WZ7zNWn8py3XhgHB_8aURbveCvFoNYmGALT5R64eEXVoz9zJ9RCJM1w6s1MmNhlItMAbVy4vR7ayhZ4qgS0gtoU09dr37OxAMkwqYDoRuNMiDv0Z7reM_Vj076fbc"
-                                    />
-                                </div>
-                                <div class="flex-grow">
-                                    <h3
-                                        class="font-headline font-bold text-on-surface text-lg"
-                                    >
-                                        Neon Verge Smartwatch
-                                    </h3>
-                                    <p
-                                        class="text-on-surface-variant text-sm mt-1"
-                                    >
-                                        Limited Edition • Stealth Black
-                                    </p>
-                                    <div
-                                        class="mt-2 inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20"
-                                    >
-                                        In Transit
-                                    </div>
-                                </div>
-                                <div class="text-right">
-                                    <span
-                                        class="block font-headline font-bold text-xl text-on-surface"
-                                        >$549.00</span
-                                    >
-                                    <span
-                                        class="text-xs text-on-surface-variant"
-                                        >Qty: 1</span
-                                    >
-                                </div>
-                            </div>
-                            <!-- Item 2 -->
-                            <div
-                                class="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-4 rounded-lg bg-surface-container-low transition-colors hover:bg-surface-container-high neon-trace-hover group"
-                            >
-                                <div
-                                    class="w-24 h-24 rounded overflow-hidden bg-surface-container-highest flex-shrink-0"
-                                >
-                                    <img
-                                        alt="High-end headphones"
-                                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                        data-alt="Professional studio headphones on a dark pedestal with thin cyan laser light hitting the chrome accents editorial style"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIGWwBZiZCVXooeLZZtuFDY0pZMvxQ2banY2tnpmp26-2yQ6DHOEGC7868YpBlTGotaHN9N7gD6qUmCYIxr4Tkz6SFXGNl61X5Q86rjaKt3RAVrwTTVfoREGCE1t-B767WBwSwkmA7UZ2O0KQ584G51Xs4GTLf2iQHAoGC6Mdz6FUL-HrYu3mTYIdNL7AesXGFLHiPL57Tu49kc-akqfhJbjMsvUnRIwUkeF4ThoSvuGIPdyX42bSY29JlDUtoHf6YSOPG9CZQHfY"
-                                    />
-                                </div>
-                                <div class="flex-grow">
-                                    <h3
-                                        class="font-headline font-bold text-on-surface text-lg"
-                                    >
-                                        Noir ANC Headphones
-                                    </h3>
-                                    <p
-                                        class="text-on-surface-variant text-sm mt-1"
-                                    >
-                                        Signature Audio • Carbon Fiber
-                                    </p>
-                                    <div
-                                        class="mt-2 inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20"
-                                    >
-                                        In Transit
-                                    </div>
-                                </div>
-                                <div class="text-right">
-                                    <span
-                                        class="block font-headline font-bold text-xl text-on-surface"
-                                        >$329.00</span
-                                    >
-                                    <span
-                                        class="text-xs text-on-surface-variant"
-                                        >Qty: 1</span
-                                    >
-                                </div>
-                            </div>
+
+                        <div id="order-items-list" class="space-y-6">
+                            <p class="text-gray-500">
+                                Đang tải thông tin đơn hàng...
+                            </p>
                         </div>
                     </section>
                 </div>
-                <!-- Right Column: Details & Summary -->
-                <div class="lg:col-span-4 space-y-8">
-                    <!-- Delivery Info Card -->
-                    <section
-                        class="bg-surface-container-low p-6 rounded-xl border border-white/5"
-                    >
-                        <h2
-                            class="font-headline text-sm font-bold text-primary mb-6 tracking-widest uppercase"
-                        >
-                            Delivery Information
-                        </h2>
-                        <div class="space-y-6">
-                            <div>
-                                <label
-                                    class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest block mb-2"
-                                    >Shipping Address</label
-                                >
-                                <p class="text-sm font-medium leading-relaxed">
-                                    Alexander Thorne<br />
-                                    742 Cyber Plaza, Ste 402<br />
-                                    Neo-Tokyo, 100-0001<br />
-                                    Japan
-                                </p>
-                            </div>
-                            <div>
-                                <label
-                                    class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest block mb-2"
-                                    >Courier Service</label
-                                >
-                                <div class="flex items-center gap-3">
-                                    <div
-                                        class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center"
-                                    >
-                                        <span
-                                            class="material-symbols-outlined text-primary text-lg"
-                                            data-icon="rocket_launch"
-                                            >rocket_launch</span
-                                        >
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-bold">
-                                            Luminous Priority Express
-                                        </p>
-                                        <p
-                                            class="text-xs text-on-surface-variant"
-                                        >
-                                            Tracking: LPX-009923881
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- Order Summary Card -->
-                    <section
-                        class="bg-surface-container-high p-6 rounded-xl shadow-2xl shadow-cyan-900/10"
-                    >
-                        <h2
-                            class="font-headline text-sm font-bold text-on-surface mb-6 tracking-widest uppercase"
-                        >
-                            Order Summary
-                        </h2>
-                        <div class="space-y-4 font-medium text-sm">
-                            <div class="flex justify-between">
-                                <span class="text-on-surface-variant"
-                                    >Subtotal</span
-                                >
-                                <span class="text-on-surface">$878.00</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-on-surface-variant"
-                                    >Shipping</span
-                                >
-                                <span class="text-on-surface">$0.00</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-on-surface-variant">Tax</span>
-                                <span class="text-on-surface">$72.44</span>
-                            </div>
-                            <div
-                                class="pt-4 border-t border-white/10 flex justify-between items-end"
-                            >
-                                <span
-                                    class="font-headline font-bold text-lg uppercase"
-                                    >Total</span
-                                >
-                                <span
-                                    class="font-headline font-bold text-2xl text-primary drop-shadow-[0_0_8px_rgba(0,218,243,0.3)]"
-                                    >$950.44</span
-                                >
-                            </div>
-                        </div>
-                        <div class="mt-8 flex flex-col gap-3">
-                            <button
-                                class="w-full py-3 border border-outline-variant hover:border-primary/50 text-on-surface-variant hover:text-primary font-headline text-xs font-bold uppercase tracking-widest transition-all rounded"
-                            >
-                                Download Invoice
-                            </button>
-                            <button
-                                class="w-full py-3 border border-outline-variant hover:border-primary/50 text-on-surface-variant hover:text-primary font-headline text-xs font-bold uppercase tracking-widest transition-all rounded"
-                            >
-                                Track On Map
-                            </button>
-                        </div>
-                    </section>
-                    <!-- Status Card (Bento Style) -->
+
+                <div class="lg:col-span-4 space-y-6">
                     <div
-                        class="bg-primary/5 border border-primary/10 p-6 rounded-xl flex items-center gap-4"
+                        class="bg-primary/5 border border-primary/10 p-6 rounded-2xl"
                     >
-                        <span
-                            class="material-symbols-outlined text-primary text-3xl animate-pulse"
-                            data-icon="notifications_active"
-                            >notifications_active</span
+                        <h3
+                            class="text-sm font-bold text-primary uppercase mb-4"
                         >
-                        <div>
-                            <p
-                                class="text-xs font-bold text-primary uppercase tracking-tighter"
-                            >
-                                Live Update
-                            </p>
-                            <p class="text-sm font-medium">
-                                Package departed Tokyo Sorting Facility
-                            </p>
-                            <p class="text-[10px] text-on-surface-variant">
-                                2 hours ago
-                            </p>
-                        </div>
+                            Shipping Status
+                        </h3>
+                        <p class="text-sm">
+                            Đơn hàng đang được chuẩn bị và sẽ sớm gửi đến bạn.
+                        </p>
                     </div>
                 </div>
             </div>
         </main>
-        <!-- Footer Decoration -->
-        <footer class="mt-20 py-12 border-t border-white/5 text-center">
-            <p
-                class="font-headline text-[10px] text-on-surface-variant tracking-[0.4em] uppercase opacity-50"
-            >
-                LUMINOUS NOIR • THE DIGITAL GALLERY • MMXXIII
-            </p>
-        </footer>
+
+        <script src="order.js"></script>
     </body>
 </html>
