@@ -2,139 +2,65 @@
 <html lang="vi">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Product Detail - Dark Tech Style</title>
+        <title>Luminous | Detail View</title>
+        <script src="https://cdn.tailwindcss.com"></script>
         <style>
-            /* Giao diện tối đậm hiện đại */
             body {
-                background-color: #0a0a0a;
-                color: #ffffff;
-                font-family: "Inter", sans-serif;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 100vh;
-                margin: 0;
-            }
-
-            .detail-wrapper {
-                display: grid;
-                grid-template-columns: 1.2fr 1fr; /* Ảnh trái (rộng hơn tí), Thông tin phải */
-                max-width: 1000px;
-                width: 90%;
-                gap: 40px;
-                padding: 40px;
-                background: #111111;
-                border-radius: 24px;
-                border: 1px solid #222;
-            }
-
-            /* Bên trái: Ảnh sản phẩm */
-            .left-side img {
-                width: 100%;
-                height: auto;
-                border-radius: 16px;
-                background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%);
-                object-fit: contain;
-            }
-
-            /* Bên phải: Thông tin */
-            .right-side {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-
-            .limited-tag {
-                color: #888;
-                font-size: 12px;
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                margin-bottom: 10px;
-            }
-
-            #product-name {
-                font-size: 42px;
-                font-weight: 800;
-                margin: 0 0 15px 0;
-                text-transform: uppercase;
-            }
-
-            #product-price {
-                font-size: 28px;
-                color: #00e5ff; /* Màu xanh neon như hình bạn gửi */
-                font-weight: 600;
-                margin-bottom: 25px;
-            }
-
-            #product-desc {
-                color: #aaa;
-                line-height: 1.6;
-                margin-bottom: 30px;
-                font-size: 15px;
-            }
-
-            /* Nút bấm */
-            .btn-action {
-                width: 100%;
-                padding: 16px;
-                border-radius: 12px;
-                font-weight: 700;
-                cursor: pointer;
-                border: none;
-                margin-bottom: 12px;
-                transition: 0.3s;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .btn-add-cart {
-                background-color: #00e5ff;
-                color: #000;
-            }
-
-            .btn-wishlist {
-                background-color: transparent;
+                background: #050505;
                 color: #fff;
-                border: 1px solid #333;
+                font-family: "Space Grotesk", sans-serif;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
-
-            .btn-action:hover {
-                opacity: 0.8;
-                transform: translateY(-2px);
-            }
-
-            /* Responsive cho Mobile */
-            @media (max-width: 768px) {
-                .detail-wrapper {
-                    grid-template-columns: 1fr;
-                    padding: 20px;
-                }
+            .detail-card {
+                background: #0f0f0f;
+                border: 1px solid rgba(255, 255, 255, 0.05);
             }
         </style>
     </head>
-    <body>
-        <div class="detail-wrapper">
-            <div class="left-side">
-                <img id="product-img" src="" alt="Sản phẩm" />
+    <body class="p-6">
+        <div
+            class="max-w-5xl w-full detail-card rounded-[3rem] overflow-hidden grid grid-cols-1 md:grid-cols-2"
+        >
+            <div class="p-10 bg-black flex items-center justify-center">
+                <img
+                    id="mainImg"
+                    class="w-full rounded-2xl shadow-2xl"
+                    src=""
+                    alt=""
+                />
             </div>
-
-            <div class="right-side">
-                <div class="limited-tag">Limited Edition Release</div>
-                <h1 id="product-name">Đang tải...</h1>
-                <div id="product-price">0 VNĐ</div>
-
-                <div id="product-desc">Mô tả sản phẩm sẽ hiện ở đây.</div>
-
-                <button class="btn-action btn-add-cart">🛒 ADD TO CART</button>
-                <button class="btn-action btn-wishlist">
-                    ♡ ADD TO WISH-LIST
-                </button>
+            <div class="p-12 flex flex-col justify-center">
+                <h1
+                    id="mainTitle"
+                    class="text-5xl font-black uppercase italic mb-6"
+                ></h1>
+                <p
+                    id="mainDesc"
+                    class="text-gray-400 leading-relaxed mb-10 italic"
+                ></p>
+                <div
+                    class="flex items-center justify-between border-t border-white/10 pt-8"
+                >
+                    <span
+                        id="mainPrice"
+                        class="text-3xl font-mono text-cyan-400 font-bold"
+                    ></span>
+                    <button
+                        class="bg-white text-black px-8 py-4 rounded-full font-bold uppercase text-xs hover:bg-cyan-400 transition-all"
+                    >
+                        Add to System
+                    </button>
+                </div>
+                <a
+                    href="index.html"
+                    class="mt-10 text-[10px] text-gray-600 uppercase hover:text-white transition-all"
+                    >← Back to Terminal</a
+                >
             </div>
         </div>
-
-        <script src="js/detail.js"></script>
+        <script src="detail.js"></script>
     </body>
 </html>

@@ -1,36 +1,71 @@
+const STORAGE_KEY = "luminous_db";
+
 document.addEventListener("DOMContentLoaded", () => {
-    const btnSave = document.getElementById("btn-save-product");
+    const addBtn = document.getElementById("addBtn");
+    const adminList = document.getElementById("admin-list");
 
-    btnSave.onclick = () => {
-        const name = document.getElementById("add-name").value;
-        const price = document.getElementById("add-price").value;
-        const image = document.getElementById("add-image").value;
-        const desc = document.getElementById("add-desc").value;
+    function renderAdmin() {
+        if (!adminList) return;
+        const products = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
-        if (!name || !price || !image) {
-            alert("Vui lòng điền đủ Tên, Giá và Link ảnh!");
+        if (products.length === 0) {
+            adminList.innerHTML = `<p class="text-gray-600 italic text-center py-10">Kho hàng đang trống</p>`;
             return;
         }
 
-        // 1. Lấy danh sách hàng tự thêm cũ
-        let customProducts =
-            JSON.parse(localStorage.getItem("customProducts")) || [];
+        adminList.innerHTML = products
+            .map(
+                (p, index) => `
+            <div class="flex items-center gap-4 bg-black/50 p-4 rounded-2xl border border-white/5">
+                <img src="${p.image}" class="w-12 h-12 object-cover rounded-lg" onerror="this.src='https://placehold.co/100x100?text=Lỗi'">
+                <div class="flex-1">
+                    <p class="font-bold text-sm text-white uppercase">${p.name}</p>
+                    <p class="text-cyan-400 text-xs font-mono">${p.price}</p>
+                </div>
+                <button onclick="deleteProduct(${index})" class="text-red-500 hover:bg-red-500/10 px-3 py-1 rounded-lg text-[10px] font-bold border border-red-500/20 transition-all">XÓA</button>
+            </div>
+        `,
+            )
+            .join("");
+    }
 
-        // 2. Tạo sản phẩm mới (ID có chữ "custom" để không bị trùng với file JSON)
-        const newProduct = {
-            id: "custom-" + Date.now(),
-            name: name,
-            price: price,
-            image: image,
-            description: desc,
-            isLimited: false,
+    if (addBtn) {
+        addBtn.onclick = function () {
+            const name = document.getElementById("name").value.trim();
+            const price = document.getElementById("price").value.trim();
+            const image = document.getElementById("image").value.trim();
+            const desc = document.getElementById("desc").value.trim();
+
+            if (!name || !price || !image) {
+                alert("Bạn chưa nhập đủ thông tin kìa!");
+                return;
+            }
+
+            const products =
+                JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            products.unshift({ id: Date.now(), name, price, image, desc });
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
+            alert("✅ Đã lưu: " + name);
+
+            // Xóa form
+            document.getElementById("name").value = "";
+            document.getElementById("price").value = "";
+            document.getElementById("image").value = "";
+            document.getElementById("desc").value = "";
+
+            renderAdmin();
         };
+    }
 
-        // 3. Cất vào kho LocalStorage
-        customProducts.push(newProduct);
-        localStorage.setItem("customProducts", JSON.stringify(customProducts));
-
-        alert("Đã lưu sản phẩm thành công!");
-        window.location.href = "index.html"; // Chuyển về trang chủ để xem
+    window.deleteProduct = (index) => {
+        if (confirm("Xóa món này nhé?")) {
+            let products = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            products.splice(index, 1);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
+            renderAdmin();
+        }
     };
+
+    renderAdmin();
 });
