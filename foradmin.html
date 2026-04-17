@@ -3,189 +3,107 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Luminous Admin | Quản lý sản phẩm</title>
+        <title>Luminous Admin | Command Center</title>
         <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap"
+            rel="stylesheet"
+        />
         <style>
             body {
-                background-color: #0a0a0a;
-                color: white;
+                background: #050505;
+                color: #fff;
+                font-family: "Space Grotesk", sans-serif;
             }
-            #admin-list::-webkit-scrollbar {
-                width: 5px;
+            .cyber-input {
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                transition: all 0.3s;
             }
-            #admin-list::-webkit-scrollbar-thumb {
-                background: #22d3ee;
-                border-radius: 10px;
+            .cyber-input:focus {
+                border-color: #00f2ff;
+                box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+                outline: none;
+            }
+            .glass-card {
+                background: rgba(15, 15, 15, 0.8);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
             }
         </style>
     </head>
-    <body class="p-4 md:p-10 font-sans">
-        <div class="max-w-6xl mx-auto">
-            <h1
-                class="text-3xl font-black text-cyan-400 uppercase mb-10 tracking-tighter"
+    <body class="p-6 md:p-12">
+        <div class="max-w-7xl mx-auto">
+            <header
+                class="flex justify-between items-center mb-12 border-b border-white/10 pb-6"
             >
-                Luminous Admin
-            </h1>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <div
-                    class="bg-[#111] p-8 rounded-3xl border border-white/5 shadow-2xl"
+                <h1 class="text-3xl font-black italic">
+                    COMMAND <span class="text-cyan-400">CENTER</span>
+                </h1>
+                <a
+                    href="index.html"
+                    class="text-xs font-bold border border-white/20 px-6 py-2 rounded-full hover:bg-white hover:text-black transition-all"
+                    >XEM CỬA HÀNG</a
                 >
-                    <h2
-                        class="text-sm font-bold mb-6 text-gray-500 uppercase tracking-widest"
-                    >
-                        Thêm sản phẩm
-                    </h2>
-                    <div class="space-y-4">
-                        <input
-                            type="text"
-                            id="name"
-                            placeholder="Tên sản phẩm"
-                            class="w-full bg-black border border-white/10 p-4 rounded-xl focus:border-cyan-400 outline-none transition-all"
-                        />
-                        <input
-                            type="text"
-                            id="price"
-                            placeholder="Giá (VD: $2,400)"
-                            class="w-full bg-black border border-white/10 p-4 rounded-xl focus:border-cyan-400 outline-none transition-all"
-                        />
-                        <input
-                            type="text"
-                            id="image"
-                            placeholder="Link ảnh sản phẩm"
-                            class="w-full bg-black border border-white/10 p-4 rounded-xl focus:border-cyan-400 outline-none transition-all"
-                        />
-                        <textarea
-                            id="desc"
-                            placeholder="Mô tả sản phẩm"
-                            rows="4"
-                            class="w-full bg-black border border-white/10 p-4 rounded-xl focus:border-cyan-400 outline-none transition-all"
-                        ></textarea>
+            </header>
 
-                        <button
-                            id="addBtn"
-                            class="w-full bg-cyan-400 hover:bg-white text-black font-black py-4 rounded-2xl transition-all shadow-lg uppercase"
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <div class="lg:col-span-5">
+                    <div class="glass-card p-8 rounded-[2rem] sticky top-8">
+                        <h2
+                            class="text-cyan-400 text-xs font-bold uppercase tracking-[0.2em] mb-8"
                         >
-                            Lưu vào hệ thống
-                        </button>
+                            Thêm sản phẩm mới
+                        </h2>
+                        <div class="space-y-5">
+                            <input
+                                type="text"
+                                id="name"
+                                class="cyber-input w-full rounded-2xl px-5 py-4 text-sm"
+                                placeholder="Tên sản phẩm"
+                            />
+                            <input
+                                type="text"
+                                id="price"
+                                class="cyber-input w-full rounded-2xl px-5 py-4 text-sm"
+                                placeholder="Giá (VD: $2,500)"
+                            />
+                            <input
+                                type="text"
+                                id="image"
+                                class="cyber-input w-full rounded-2xl px-5 py-4 text-sm"
+                                placeholder="Link ảnh (URL)"
+                            />
+                            <textarea
+                                id="desc"
+                                rows="4"
+                                class="cyber-input w-full rounded-2xl px-5 py-4 text-sm"
+                                placeholder="Mô tả chi tiết"
+                            ></textarea>
+                            <button
+                                id="addBtn"
+                                class="w-full bg-cyan-400 text-black font-black py-5 rounded-2xl hover:bg-white transition-all shadow-[0_0_20px_rgba(0,242,255,0.3)] uppercase text-xs"
+                            >
+                                Lưu vào kho hàng
+                            </button>
+                        </div>
                     </div>
                 </div>
-
-                <div class="bg-[#111] p-8 rounded-3xl border border-white/5">
-                    <h2
-                        class="text-sm font-bold mb-6 text-gray-500 uppercase tracking-widest"
-                    >
-                        Sản phẩm trong kho
-                    </h2>
-                    <div
-                        id="admin-list"
-                        class="space-y-4 max-h-[500px] overflow-y-auto pr-2"
-                    ></div>
+                <div class="lg:col-span-7">
+                    <div class="glass-card p-8 rounded-[2rem]">
+                        <h2
+                            class="text-gray-500 text-xs font-bold uppercase mb-8"
+                        >
+                            Danh sách trong kho
+                        </h2>
+                        <div
+                            id="admin-list"
+                            class="space-y-4 max-h-[600px] overflow-y-auto pr-2"
+                        ></div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <script>
-            const STORAGE_KEY = "luminous_db";
-
-            document.addEventListener("DOMContentLoaded", () => {
-                const addBtn = document.getElementById("addBtn");
-                const adminList = document.getElementById("admin-list");
-
-                // 1. Hàm hiển thị danh sách để xóa
-                function renderAdmin() {
-                    if (!adminList) return;
-                    const products =
-                        JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-
-                    if (products.length === 0) {
-                        adminList.innerHTML = `<p class="text-gray-500 text-center py-10 italic uppercase text-[10px] tracking-widest">Kho hàng trống</p>`;
-                        return;
-                    }
-
-                    adminList.innerHTML = products
-                        .map(
-                            (p, index) => `
-            <div class="flex items-center gap-4 bg-black/50 p-4 rounded-2xl border border-white/5 mb-3 group hover:border-cyan-400/30 transition-all">
-                <img src="${p.image}" class="w-12 h-12 object-cover rounded-lg shadow-lg" onerror="this.src='https://placehold.co/100x100?text=Lỗi'">
-                <div class="flex-1">
-                    <p class="font-bold text-xs text-white uppercase tracking-tight">${p.name}</p>
-                    <p class="text-cyan-400 text-[10px] font-mono">${p.price}</p>
-                </div>
-                <button onclick="deleteProduct(${index})" class="text-red-500 hover:bg-red-500/10 px-3 py-1 rounded-lg text-[10px] font-bold border border-red-500/20 transition-all">XÓA</button>
-            </div>
-        `,
-                        )
-                        .join("");
-                }
-
-                // 2. Xử lý khi bấm nút Lưu
-                if (addBtn) {
-                    addBtn.onclick = function () {
-                        // Lấy dữ liệu từ các ô input
-                        const name = document
-                            .getElementById("name")
-                            ?.value.trim();
-                        const price = document
-                            .getElementById("price")
-                            ?.value.trim();
-                        const image = document
-                            .getElementById("image")
-                            ?.value.trim();
-                        const desc = document
-                            .getElementById("desc")
-                            ?.value.trim();
-
-                        if (!name || !price || !image) {
-                            alert("Bạn nhập thiếu thông tin rồi!");
-                            return;
-                        }
-
-                        const products =
-                            JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-
-                        // Thêm món mới lên đầu danh sách
-                        products.unshift({
-                            id: "p-" + Date.now(),
-                            name,
-                            price,
-                            image,
-                            desc,
-                        });
-
-                        localStorage.setItem(
-                            STORAGE_KEY,
-                            JSON.stringify(products),
-                        );
-                        alert("✅ Đã lưu thành công!");
-
-                        // Xóa trắng ô nhập để nhập món tiếp theo
-                        document.getElementById("name").value = "";
-                        document.getElementById("price").value = "";
-                        document.getElementById("image").value = "";
-                        document.getElementById("desc").value = "";
-
-                        renderAdmin();
-                    };
-                }
-
-                // 3. Hàm xóa sản phẩm
-                window.deleteProduct = (index) => {
-                    if (confirm("Xác nhận xóa món này khỏi hệ thống?")) {
-                        let products =
-                            JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-                        products.splice(index, 1);
-                        localStorage.setItem(
-                            STORAGE_KEY,
-                            JSON.stringify(products),
-                        );
-                        renderAdmin();
-                    }
-                };
-
-                // Chạy lần đầu khi load trang
-                renderAdmin();
-            });
-        </script>
+        <script src="js/admin.js"></script>
     </body>
 </html>
