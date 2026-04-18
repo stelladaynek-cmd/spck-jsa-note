@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html class="dark" lang="en">
     <head>
         <meta charset="utf-8" />
@@ -7,431 +6,158 @@
         <title>LUMINOUS NOIR | Checkout</title>
         <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
         <link
-            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
         />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-            rel="stylesheet"
-        />
-        <script id="tailwind-config">
+        <script>
             tailwind.config = {
                 darkMode: "class",
                 theme: {
                     extend: {
-                        colors: {
-                            "on-error-container": "#ffdad6",
-                            "secondary-container": "#314863",
-                            "surface-container": "#1f1f1f",
-                            "on-secondary-fixed": "#011d35",
-                            "secondary-fixed-dim": "#b0c9e8",
-                            "surface-container-low": "#1b1b1b",
-                            "on-primary-fixed-variant": "#004f58",
-                            outline: "#849396",
-                            "surface-container-highest": "#353535",
-                            "outline-variant": "#3b494c",
-                            "on-tertiary-fixed-variant": "#004b70",
-                            "inverse-on-surface": "#303030",
-                            "on-secondary": "#19324b",
-                            "on-primary-fixed": "#001f24",
-                            "surface-tint": "#00daf3",
-                            "on-secondary-container": "#9fb7d6",
-                            "tertiary-container": "#a4d6ff",
-                            "surface-bright": "#393939",
-                            "error-container": "#93000a",
-                            "tertiary-fixed-dim": "#8dcdff",
-                            "surface-container-high": "#2a2a2a",
-                            "on-secondary-fixed-variant": "#314863",
-                            "surface-dim": "#131313",
-                            "on-primary": "#00363d",
-                            tertiary: "#deefff",
-                            "primary-fixed-dim": "#00daf3",
-                            background: "#131313",
-                            "on-background": "#e2e2e2",
-                            "surface-container-lowest": "#0e0e0e",
-                            error: "#ffb4ab",
-                            "on-primary-container": "#00626e",
-                            "on-tertiary-container": "#005e8b",
-                            primary: "#c3f5ff",
-                            "secondary-fixed": "#d1e4ff",
-                            secondary: "#b0c9e8",
-                            "inverse-primary": "#006875",
-                            "surface-variant": "#353535",
-                            "on-tertiary-fixed": "#001e30",
-                            "primary-container": "#00e5ff",
-                            surface: "#131313",
-                            "on-surface": "#e2e2e2",
-                            "inverse-surface": "#e2e2e2",
-                            "on-error": "#690005",
-                            "tertiary-fixed": "#cae6ff",
-                            "on-surface-variant": "#bac9cc",
-                            "on-tertiary": "#00344f",
-                            "primary-fixed": "#9cf0ff",
-                        },
-                        fontFamily: {
-                            headline: ["Space Grotesk"],
-                            body: ["Manrope"],
-                            label: ["Manrope"],
-                        },
-                        borderRadius: {
-                            DEFAULT: "0.125rem",
-                            lg: "0.25rem",
-                            xl: "0.5rem",
-                            full: "0.75rem",
-                        },
+                        colors: { surface: "#0a0a0a", primary: "#00e5ff" },
                     },
                 },
             };
         </script>
-        <style>
-            .material-symbols-outlined {
-                font-variation-settings:
-                    "FILL" 0,
-                    "wght" 400,
-                    "GRAD" 0,
-                    "opsz" 24;
-            }
-            .neon-trace-hover:hover {
-                box-shadow:
-                    0 -1px 0 0 rgba(0, 229, 255, 0.3) inset,
-                    0 0 15px rgba(0, 229, 255, 0.1);
-            }
-        </style>
     </head>
-    <body class="bg-background text-on-background font-body min-h-screen">
-        <!-- Top Navigation (Minimalist Shell Suppression applied for focused task) -->
-        <nav
-            class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-cyan-500/10 flex justify-between items-center px-8 h-16 shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
-        >
-            <div
-                class="text-2xl font-bold tracking-tighter text-cyan-400 drop-shadow-[0_0_8px_rgba(0,229,255,0.5)] font-headline"
-            >
-                LUMINOUS NOIR
-            </div>
-            <div
-                class="flex items-center gap-4 text-on-surface-variant text-sm font-label uppercase tracking-widest"
-            >
-                <span class="text-primary">01 Review</span>
-                <span class="opacity-20">—</span>
-                <span class="text-on-surface">02 Checkout</span>
-                <span class="opacity-20">—</span>
-                <span class="opacity-40">03 Confirm</span>
-            </div>
-            <div class="flex items-center gap-6">
-                <a
-                    class="text-on-surface-variant hover:text-primary duration-300"
-                    href="#"
+    <body class="bg-surface text-white font-['Manrope'] min-h-screen">
+        <main class="max-w-7xl mx-auto px-8 py-20">
+            <div class="mb-12">
+                <h1
+                    class="text-4xl md:text-6xl font-bold tracking-tighter uppercase italic"
                 >
-                    <span class="material-symbols-outlined" data-icon="close"
-                        >close</span
-                    >
-                </a>
+                    Secure Checkout
+                </h1>
             </div>
-        </nav>
-        <main class="pt-28 pb-20 px-6 max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                <!-- Left Column: Shipping & Payment -->
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
                 <div class="lg:col-span-7 space-y-12">
-                    <!-- Section: Shipping Address -->
                     <section>
-                        <div class="flex items-center gap-3 mb-8">
-                            <span
-                                class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/20 flex items-center justify-center text-primary text-xs font-bold font-headline"
-                                >01</span
-                            >
-                            <h2
-                                class="text-xl font-headline font-bold tracking-tight text-on-surface"
-                            >
-                                SHIPPING ADDRESS
-                            </h2>
-                        </div>
-                        <div
-                            class="bg-surface-container-low p-8 rounded-xl space-y-6"
+                        <h2
+                            class="text-sm font-black uppercase tracking-[0.4em] mb-8 text-primary/50"
                         >
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="space-y-2">
-                                    <label
-                                        class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
-                                        >First Name</label
-                                    >
-                                    <input
-                                        class="w-full bg-surface-container-highest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface text-sm p-3 transition-all duration-300"
-                                        type="text"
-                                        value="Julian"
-                                    />
-                                </div>
-                                <div class="space-y-2">
-                                    <label
-                                        class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
-                                        >Last Name</label
-                                    >
-                                    <input
-                                        class="w-full bg-surface-container-highest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface text-sm p-3 transition-all duration-300"
-                                        type="text"
-                                        value="Vanguard"
-                                    />
-                                </div>
-                            </div>
+                            01. Shipping Details
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="space-y-2">
                                 <label
-                                    class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
-                                    >Street Address</label
+                                    class="text-[10px] uppercase tracking-widest text-gray-500"
+                                    >Full Name</label
                                 >
                                 <input
-                                    class="w-full bg-surface-container-highest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface text-sm p-3 transition-all duration-300"
-                                    placeholder="123 Neon District"
+                                    id="checkout-fullname"
                                     type="text"
+                                    placeholder="Họ và tên"
+                                    class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-primary outline-none"
                                 />
                             </div>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <div class="md:col-span-2 space-y-2">
-                                    <label
-                                        class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
-                                        >City</label
-                                    >
-                                    <input
-                                        class="w-full bg-surface-container-highest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface text-sm p-3 transition-all duration-300"
-                                        placeholder="Neo-Tokyo"
-                                        type="text"
-                                    />
-                                </div>
-                                <div class="space-y-2">
-                                    <label
-                                        class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
-                                        >Postal Code</label
-                                    >
-                                    <input
-                                        class="w-full bg-surface-container-highest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface text-sm p-3 transition-all duration-300"
-                                        placeholder="100-0001"
-                                        type="text"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- Section: Payment Method -->
-                    <section>
-                        <div class="flex items-center gap-3 mb-8">
-                            <span
-                                class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/20 flex items-center justify-center text-primary text-xs font-bold font-headline"
-                                >02</span
-                            >
-                            <h2
-                                class="text-xl font-headline font-bold tracking-tight text-on-surface"
-                            >
-                                PAYMENT METHOD
-                            </h2>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                            <label
-                                class="relative flex items-center p-6 cursor-pointer bg-surface-container rounded-xl border border-primary/20 shadow-[0_0_15px_rgba(0,218,243,0.05)] transition-all"
-                            >
-                                <input
-                                    checked=""
-                                    class="hidden peer"
-                                    name="payment"
-                                    type="radio"
-                                />
-                                <div class="flex items-center gap-4">
-                                    <span
-                                        class="material-symbols-outlined text-primary"
-                                        data-icon="credit_card"
-                                        >credit_card</span
-                                    >
-                                    <div class="flex flex-col">
-                                        <span
-                                            class="text-sm font-bold font-headline text-on-surface"
-                                            >Credit Card</span
-                                        >
-                                        <span
-                                            class="text-[10px] text-on-surface-variant uppercase"
-                                            >Visa, Master, Amex</span
-                                        >
-                                    </div>
-                                </div>
-                                <span
-                                    class="absolute top-4 right-4 w-4 h-4 rounded-full border-2 border-primary flex items-center justify-center"
-                                >
-                                    <span
-                                        class="w-2 h-2 bg-primary rounded-full"
-                                    ></span>
-                                </span>
-                            </label>
-                            <label
-                                class="relative flex items-center p-6 cursor-pointer bg-surface-container-low hover:bg-surface-container rounded-xl border border-outline-variant/10 transition-all group"
-                            >
-                                <input
-                                    class="hidden peer"
-                                    name="payment"
-                                    type="radio"
-                                />
-                                <div class="flex items-center gap-4">
-                                    <span
-                                        class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors"
-                                        data-icon="account_balance_wallet"
-                                        >account_balance_wallet</span
-                                    >
-                                    <div class="flex flex-col">
-                                        <span
-                                            class="text-sm font-bold font-headline text-on-surface-variant group-hover:text-on-surface transition-colors"
-                                            >PayPal / Crypto</span
-                                        >
-                                        <span
-                                            class="text-[10px] text-on-surface-variant/60 uppercase"
-                                            >Express Checkout</span
-                                        >
-                                    </div>
-                                </div>
-                                <span
-                                    class="absolute top-4 right-4 w-4 h-4 rounded-full border-2 border-outline-variant/30"
-                                ></span>
-                            </label>
-                        </div>
-                        <div
-                            class="bg-surface-container p-8 rounded-xl space-y-6"
-                        >
                             <div class="space-y-2">
                                 <label
-                                    class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
-                                    >Card Number</label
+                                    class="text-[10px] uppercase tracking-widest text-gray-500"
+                                    >Email</label
                                 >
-                                <div class="relative">
-                                    <input
-                                        class="w-full bg-surface-container-highest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface text-sm p-3 pr-12 transition-all duration-300"
-                                        placeholder="•••• •••• •••• 4242"
-                                        type="text"
-                                    />
-                                    <span
-                                        class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-lg"
-                                        data-icon="lock"
-                                        >lock</span
-                                    >
-                                </div>
+                                <input
+                                    id="checkout-email"
+                                    type="email"
+                                    placeholder="email@example.com"
+                                    class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-primary outline-none"
+                                />
                             </div>
-                            <div class="grid grid-cols-2 gap-6">
-                                <div class="space-y-2">
-                                    <label
-                                        class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
-                                        >Expiry</label
-                                    >
-                                    <input
-                                        class="w-full bg-surface-container-highest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface text-sm p-3 transition-all duration-300"
-                                        placeholder="MM / YY"
-                                        type="text"
-                                    />
-                                </div>
-                                <div class="space-y-2">
-                                    <label
-                                        class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
-                                        >CVC</label
-                                    >
-                                    <input
-                                        class="w-full bg-surface-container-highest border-none border-b border-outline-variant/30 focus:border-primary focus:ring-0 text-on-surface text-sm p-3 transition-all duration-300"
-                                        placeholder="•••"
-                                        type="text"
-                                    />
-                                </div>
+                            <div class="md:col-span-2 space-y-2">
+                                <label
+                                    class="text-[10px] uppercase tracking-widest text-gray-500"
+                                    >Phone</label
+                                >
+                                <input
+                                    id="checkout-phone"
+                                    type="tel"
+                                    placeholder="Số điện thoại"
+                                    class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-primary outline-none"
+                                />
+                            </div>
+                            <div class="md:col-span-2 space-y-2">
+                                <label
+                                    class="text-[10px] uppercase tracking-widest text-gray-500"
+                                    >Address</label
+                                >
+                                <textarea
+                                    id="checkout-address"
+                                    rows="3"
+                                    placeholder="Địa chỉ giao hàng chi tiết"
+                                    class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-primary outline-none"
+                                ></textarea>
                             </div>
                         </div>
                     </section>
                 </div>
-                <!-- Right Column: Order Summary (Bento-style fixed panel) -->
-                <aside class="lg:col-span-5">
-                    <div class="sticky top-28 space-y-6">
-                        <div
-                            class="bg-surface-container p-8 rounded-xl border-t border-primary/10"
-                        >
-                            <h3
-                                class="text-lg font-headline font-bold mb-8 tracking-tight uppercase text-on-surface"
-                            >
-                                Order Summary
-                            </h3>
-                            <div
-                                class="flex gap-4 mb-6 p-4 bg-surface-container rounded-xl"
-                            >
-                                <img
-                                    id="checkout-img"
-                                    src=""
-                                    class="w-20 h-20 object-cover rounded-lg"
-                                />
-                                <div>
-                                    <h3
-                                        id="checkout-name"
-                                        class="font-bold text-on-surface"
-                                    >
-                                        Tên sản phẩm
-                                    </h3>
-                                    <p
-                                        id="checkout-price"
-                                        class="text-primary font-bold"
-                                    >
-                                        Giá
-                                    </p>
-                                </div>
-                            </div>
 
+                <aside class="lg:col-span-5">
+                    <div
+                        class="sticky top-12 bg-[#111] rounded-[2.5rem] p-8 border border-white/5 shadow-2xl"
+                    >
+                        <h2
+                            class="text-lg font-bold mb-8 uppercase tracking-widest italic"
+                        >
+                            Order Summary
+                        </h2>
+                        <div
+                            class="flex items-center gap-6 pb-8 border-b border-white/5"
+                        >
+                            <img
+                                id="checkout-img"
+                                src=""
+                                class="w-24 h-32 object-cover rounded-xl border border-white/10"
+                            />
+                            <div class="flex-1">
+                                <h3
+                                    id="checkout-name"
+                                    class="font-bold text-white uppercase tracking-tight leading-tight"
+                                >
+                                    Sản phẩm
+                                </h3>
+                                <p
+                                    id="checkout-price"
+                                    class="text-primary font-mono text-xl font-bold mt-2"
+                                >
+                                    $0.00
+                                </p>
+                            </div>
+                        </div>
+                        <div class="py-8 space-y-4">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500 uppercase"
+                                    >Subtotal</span
+                                >
+                                <span
+                                    id="subtotal-price"
+                                    class="text-white font-mono"
+                                    >$0.00</span
+                                >
+                            </div>
+                            <div
+                                class="flex justify-between items-end pt-4 border-t border-white/10"
+                            >
+                                <span
+                                    class="text-xs font-black uppercase text-gray-400"
+                                    >Total</span
+                                >
+                                <span
+                                    id="final-price"
+                                    class="text-4xl font-black text-white"
+                                    >$0.00</span
+                                >
+                            </div>
                             <button
                                 id="btn-complete-purchase"
-                                class="w-full ..."
+                                class="w-full bg-primary text-black font-black py-5 rounded-2xl uppercase mt-8 hover:bg-white transition-all"
                             >
                                 Complete Purchase
                             </button>
-                        </div>
-                        <!-- Trust Badges -->
-                        <div class="flex justify-center gap-8 opacity-40">
-                            <span
-                                class="material-symbols-outlined text-3xl"
-                                data-icon="verified_user"
-                                >verified_user</span
-                            >
-                            <span
-                                class="material-symbols-outlined text-3xl"
-                                data-icon="shield"
-                                >shield</span
-                            >
-                            <span
-                                class="material-symbols-outlined text-3xl"
-                                data-icon="encrypted"
-                                >encrypted</span
-                            >
                         </div>
                     </div>
                 </aside>
             </div>
         </main>
-        <!-- Footer Decoration (Small) -->
-        <footer class="py-10 border-t border-outline-variant/5">
-            <div
-                class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4"
-            >
-                <p
-                    class="text-[10px] text-on-surface-variant uppercase tracking-widest"
-                >
-                    © 2024 Luminous Noir. All Rights Reserved.
-                </p>
-                <div class="flex gap-6">
-                    <a
-                        class="text-[10px] text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors"
-                        href="#"
-                        >Support</a
-                    >
-                    <a
-                        class="text-[10px] text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors"
-                        href="#"
-                        >Secure</a
-                    >
-                    <a
-                        class="text-[10px] text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors"
-                        href="#"
-                        >Terms</a
-                    >
-                </div>
-            </div>
-        </footer>
+        <script src="./js/checkout.js"></script>
     </body>
-    <script src="js/checkout.js"></script>
 </html>
